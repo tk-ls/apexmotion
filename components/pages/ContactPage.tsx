@@ -1,26 +1,18 @@
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Book a Shoot",
-  description:
-    "Check availability for your listing. Tell us about the property and we'll confirm availability and a tailored quote within one business day.",
-};
+import { dictionaries, type Lang } from "@/lib/i18n";
 
 const inputClasses =
   "w-full border border-line bg-panel px-4 py-3 text-sm text-cream placeholder:text-muted/60 focus:border-cream focus:outline-none";
 
-export default function ContactPage() {
+export default function ContactPage({ lang }: { lang: Lang }) {
+  const t = dictionaries[lang].contact;
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-      <p className="eyebrow">Contact</p>
-      <h1 className="mt-6 max-w-3xl font-display text-4xl font-semibold leading-[1.05] tracking-tight text-cream text-balance sm:text-6xl">
-        Check availability for&nbsp;your&nbsp;listing.
+      <p className="eyebrow">{t.eyebrow}</p>
+      <h1 className="mt-6 max-w-3xl font-display text-4xl font-semibold leading-[1.05] tracking-tight text-cream sm:text-6xl">
+        {t.h1}
       </h1>
-      <p className="mt-6 max-w-xl text-muted">
-        Tell us about the property and your campaign timeline — we&rsquo;ll
-        come back with availability and a tailored quote within one business
-        day.
-      </p>
+      <p className="mt-6 max-w-xl text-muted">{t.sub}</p>
 
       <div className="mt-14 grid gap-12 border-t border-line pt-14 lg:grid-cols-[2fr_1fr]">
         {/*
@@ -31,7 +23,7 @@ export default function ContactPage() {
         <form className="grid gap-5 sm:grid-cols-2" action="#" method="POST">
           <div>
             <label htmlFor="name" className="mb-2 block text-sm text-cream/85">
-              Your name
+              {t.name}
             </label>
             <input
               id="name"
@@ -44,7 +36,7 @@ export default function ContactPage() {
           </div>
           <div>
             <label htmlFor="agency" className="mb-2 block text-sm text-cream/85">
-              Agency
+              {t.agency}
             </label>
             <input
               id="agency"
@@ -56,7 +48,7 @@ export default function ContactPage() {
           </div>
           <div>
             <label htmlFor="email" className="mb-2 block text-sm text-cream/85">
-              Email
+              {t.email}
             </label>
             <input
               id="email"
@@ -69,7 +61,7 @@ export default function ContactPage() {
           </div>
           <div>
             <label htmlFor="phone" className="mb-2 block text-sm text-cream/85">
-              Phone
+              {t.phone}
             </label>
             <input
               id="phone"
@@ -80,11 +72,8 @@ export default function ContactPage() {
             />
           </div>
           <div className="sm:col-span-2">
-            <label
-              htmlFor="address"
-              className="mb-2 block text-sm text-cream/85"
-            >
-              Property address
+            <label htmlFor="address" className="mb-2 block text-sm text-cream/85">
+              {t.address}
             </label>
             <input
               id="address"
@@ -94,41 +83,30 @@ export default function ContactPage() {
             />
           </div>
           <div>
-            <label
-              htmlFor="package"
-              className="mb-2 block text-sm text-cream/85"
-            >
-              Package of interest
+            <label htmlFor="package" className="mb-2 block text-sm text-cream/85">
+              {t.packageLabel}
             </label>
             <select id="package" name="package" className={inputClasses}>
-              <option>Not sure yet</option>
-              <option>Signature Exteriors</option>
-              <option>The Immersive Tour</option>
-              <option>The Campaign Suite</option>
-              <option>Multi-listing / agency retainer</option>
+              {t.packageOptions.map((option) => (
+                <option key={option}>{option}</option>
+              ))}
             </select>
           </div>
           <div>
-            <label
-              htmlFor="timeline"
-              className="mb-2 block text-sm text-cream/85"
-            >
-              Preferred shoot window
+            <label htmlFor="timeline" className="mb-2 block text-sm text-cream/85">
+              {t.timeline}
             </label>
             <input
               id="timeline"
               name="timeline"
               type="text"
-              placeholder="e.g. Week of 21 July"
+              placeholder={t.timelinePlaceholder}
               className={inputClasses}
             />
           </div>
           <div className="sm:col-span-2">
-            <label
-              htmlFor="message"
-              className="mb-2 block text-sm text-cream/85"
-            >
-              Anything else we should know?
+            <label htmlFor="message" className="mb-2 block text-sm text-cream/85">
+              {t.message}
             </label>
             <textarea
               id="message"
@@ -139,7 +117,7 @@ export default function ContactPage() {
           </div>
           <div className="sm:col-span-2">
             <button type="submit" className="btn-solid w-full sm:w-auto">
-              Check Availability
+              {t.submit}
             </button>
           </div>
         </form>
@@ -147,7 +125,7 @@ export default function ContactPage() {
         <aside className="space-y-6">
           <div className="border-t border-line pt-6">
             <h2 className="text-sm font-semibold uppercase tracking-[0.15em] text-cream">
-              Prefer to talk?
+              {t.talkHeading}
             </h2>
             {/* TODO: Replace placeholder contact details before launch */}
             <ul className="mt-4 space-y-2 text-sm text-cream/85">
@@ -168,12 +146,10 @@ export default function ContactPage() {
           </div>
           <div className="border-t border-line pt-6">
             <h2 className="text-sm font-semibold uppercase tracking-[0.15em] text-cream">
-              Service area
+              {t.areaHeading}
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-muted">
-              Greater Sydney — from the Eastern Suburbs and Lower North Shore
-              to the Northern Beaches, Inner West and Hills District. Regional
-              NSW by arrangement.
+              {t.areaBody}
             </p>
           </div>
         </aside>
