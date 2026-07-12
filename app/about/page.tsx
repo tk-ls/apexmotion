@@ -13,8 +13,8 @@ export default function AboutPage() {
     <>
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
         <p className="eyebrow">The Studio</p>
-        <h1 className="mt-6 max-w-3xl font-display text-4xl font-semibold leading-[1.05] tracking-tight text-cream sm:text-6xl">
-          A production partner, not a drone operator.
+        <h1 className="mt-6 max-w-3xl font-display text-4xl font-semibold leading-[1.05] tracking-tight text-cream text-balance sm:text-6xl">
+          A production partner, not&nbsp;a&nbsp;drone&nbsp;operator.
         </h1>
 
         <div className="mt-14 grid gap-12 border-t border-line pt-14 md:grid-cols-2">
@@ -86,7 +86,7 @@ export default function AboutPage() {
       <TrustBand />
 
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-        <h2 className="max-w-2xl font-display text-3xl font-semibold tracking-tight text-cream sm:text-4xl">
+        <h2 className="max-w-2xl font-display text-3xl font-semibold tracking-tight text-cream text-balance sm:text-4xl">
           See the work for yourself.
         </h2>
         <div className="mt-8 flex flex-wrap items-center gap-4">

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import Logo from "@/components/Logo";
 
 const NAV_ITEMS = [
   { href: "/", label: "Home" },
@@ -19,13 +20,8 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-ink/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-        <Link href="/" className="flex items-baseline gap-2">
-          <span className="font-display text-lg font-semibold tracking-tight text-cream">
-            APEX MOTION
-          </span>
-          <span className="text-[0.6rem] font-medium uppercase tracking-[0.35em] text-muted">
-            Studios
-          </span>
+        <Link href="/">
+          <Logo />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">

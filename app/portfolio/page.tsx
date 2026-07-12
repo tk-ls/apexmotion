@@ -25,8 +25,9 @@ export default function PortfolioPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
       <p className="eyebrow">Our Work</p>
-      <h1 className="mt-6 max-w-3xl font-display text-4xl font-semibold leading-[1.05] tracking-tight text-cream sm:text-6xl">
-        Every property has a story. We film it in one take.
+      <h1 className="mt-6 max-w-3xl font-display text-4xl font-semibold leading-[1.05] tracking-tight text-cream text-balance sm:text-6xl">
+        Every property has a story.{" "}
+        <span className="block">We film it in one take.</span>
       </h1>
       <p className="mt-6 max-w-xl text-muted">
         A curated selection of immersive FPV tours and cinematic exterior
@@ -69,7 +70,7 @@ export default function PortfolioPage() {
       </div>
 
       <div className="mt-20 border-t border-line pt-14">
-        <h2 className="max-w-2xl font-display text-3xl font-semibold tracking-tight text-cream sm:text-4xl">
+        <h2 className="max-w-2xl font-display text-3xl font-semibold tracking-tight text-cream text-balance sm:text-4xl">
           Want your listing to look like this?
         </h2>
         <Link href="/contact" className="btn-solid mt-8">

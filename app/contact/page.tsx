@@ -13,8 +13,8 @@ export default function ContactPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
       <p className="eyebrow">Contact</p>
-      <h1 className="mt-6 max-w-3xl font-display text-4xl font-semibold leading-[1.05] tracking-tight text-cream sm:text-6xl">
-        Check availability for your listing.
+      <h1 className="mt-6 max-w-3xl font-display text-4xl font-semibold leading-[1.05] tracking-tight text-cream text-balance sm:text-6xl">
+        Check availability for&nbsp;your&nbsp;listing.
       </h1>
       <p className="mt-6 max-w-xl text-muted">
         Tell us about the property and your campaign timeline — we&rsquo;ll

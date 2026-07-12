@@ -54,8 +54,8 @@ export default function ServicesPage() {
     <>
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
         <p className="eyebrow">Services &amp; Packages</p>
-        <h1 className="mt-6 max-w-3xl font-display text-4xl font-semibold leading-[1.05] tracking-tight text-cream sm:text-6xl">
-          Per-property packages, built for campaigns.
+        <h1 className="mt-6 max-w-3xl font-display text-4xl font-semibold leading-[1.05] tracking-tight text-cream text-balance sm:text-6xl">
+          Per-property packages, built&nbsp;for&nbsp;campaigns.
         </h1>
         <p className="mt-6 max-w-xl text-muted">
           Simple, per-listing pricing that scales with the property — no hourly
@@ -66,8 +66,8 @@ export default function ServicesPage() {
           {PACKAGES.map((pkg) => (
             <div
               key={pkg.index}
-              className={`flex flex-col py-10 lg:px-10 lg:first:pl-0 lg:last:pr-0 ${
-                pkg.featured ? "lg:bg-panel lg:px-10" : ""
+              className={`flex flex-col py-10 lg:px-8 ${
+                pkg.featured ? "lg:bg-panel" : ""
               }`}
             >
               <div className="flex items-baseline justify-between">
@@ -96,9 +96,11 @@ export default function ServicesPage() {
               </ul>
               <Link
                 href="/contact"
-                className={`mt-10 ${pkg.featured ? "btn-solid" : "btn-outline"}`}
+                className={`mt-10 whitespace-nowrap ${
+                  pkg.featured ? "btn-solid" : "btn-outline"
+                }`}
               >
-                Request a Tailored Quote
+                Request a Quote
               </Link>
             </div>
           ))}
@@ -121,7 +123,7 @@ export default function ServicesPage() {
       {/* Process */}
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
         <p className="eyebrow">How It Works</p>
-        <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight text-cream sm:text-4xl">
+        <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight text-cream text-balance sm:text-4xl">
           From enquiry to campaign-ready in days.
         </h2>
         <div className="mt-12 grid divide-y divide-line border-t border-line sm:grid-cols-3 sm:divide-x sm:divide-y-0">

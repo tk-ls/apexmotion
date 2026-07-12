@@ -28,8 +28,9 @@ export default function Home() {
       <section className="border-b border-line">
         <div className="mx-auto max-w-6xl px-4 pb-16 pt-24 sm:px-6 sm:pt-32">
           <p className="eyebrow">Sydney · Luxury Real Estate Media</p>
-          <h1 className="mt-6 max-w-4xl font-display text-5xl font-semibold leading-[1.05] tracking-tight text-cream sm:text-7xl">
-            Properties that sell themselves. Before the first inspection.
+          <h1 className="mt-6 max-w-4xl font-display text-5xl font-semibold leading-[1.05] tracking-tight text-cream text-balance sm:text-7xl">
+            Properties that sell themselves.{" "}
+            <span className="block">Before the first inspection.</span>
           </h1>
           <div className="mt-10 flex flex-wrap items-end justify-between gap-8">
             <p className="max-w-md text-lg leading-relaxed text-muted">
@@ -62,7 +63,7 @@ export default function Home() {
           <div className="grid items-start gap-12 md:grid-cols-2">
             <div>
               <p className="eyebrow">The Studio</p>
-              <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight text-cream sm:text-4xl">
+              <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight text-cream text-balance sm:text-4xl">
                 Immersive visual storytelling that moves buyers — and markets.
               </h2>
               <p className="mt-6 leading-relaxed text-muted">
@@ -139,7 +140,7 @@ export default function Home() {
 
       {/* Final CTA */}
       <section className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
-        <h2 className="max-w-3xl font-display text-4xl font-semibold tracking-tight text-cream sm:text-5xl">
+        <h2 className="max-w-3xl font-display text-4xl font-semibold tracking-tight text-cream text-balance sm:text-5xl">
           Your next listing deserves more than photos.
         </h2>
         <div className="mt-8 flex flex-wrap items-center gap-8">

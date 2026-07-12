@@ -21,8 +21,9 @@ export default function TrustBand() {
     <section className="border-y border-line">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <p className="eyebrow">Trust &amp; Compliance</p>
-        <h2 className="mt-4 max-w-2xl font-display text-3xl font-semibold tracking-tight text-cream sm:text-4xl">
-          Flown by professionals. Backed by certification.
+        <h2 className="mt-4 max-w-2xl font-display text-3xl font-semibold tracking-tight text-cream text-balance sm:text-4xl">
+          Flown by professionals.{" "}
+          <span className="sm:block lg:inline">Backed by certification.</span>
         </h2>
         <div className="mt-12 grid divide-y divide-line border-t border-line sm:grid-cols-3 sm:divide-x sm:divide-y-0">
           {ASSURANCES.map((item) => (

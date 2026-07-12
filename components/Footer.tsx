@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Logo from "@/components/Logo";
 
 const TRUST_BADGES = [
   "CASA-Registered Operator",
@@ -23,12 +24,7 @@ export default function Footer() {
 
         <div className="grid gap-10 py-12 sm:grid-cols-3">
           <div>
-            <p className="font-display text-lg font-semibold text-cream">
-              APEX MOTION{" "}
-              <span className="text-[0.6rem] font-sans uppercase tracking-[0.35em] text-muted">
-                Studios
-              </span>
-            </p>
+            <Logo />
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted">
               Immersive FPV property films and cinematic exterior photography
               for Sydney&rsquo;s premium real estate.
