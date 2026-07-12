@@ -19,7 +19,11 @@ export default function PortfolioPage({ lang }: { lang: Lang }) {
 
       {/* Featured film — your single strongest one-take tour */}
       <div className="mt-14 border-t border-line pt-14">
-        <VideoPlaceholder label={t.featuredLabel} sublabel={t.featuredSub} />
+        <VideoPlaceholder
+          label={t.featuredLabel}
+          sublabel={t.featuredSub}
+          aspect="aspect-video sm:aspect-[21/9]"
+        />
       </div>
 
       {/* Project grid */}

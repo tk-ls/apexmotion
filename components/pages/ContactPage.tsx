@@ -1,7 +1,7 @@
 import { dictionaries, type Lang } from "@/lib/i18n";
 
 const inputClasses =
-  "w-full border border-line bg-panel px-4 py-3 text-sm text-cream placeholder:text-muted/60 focus:border-cream focus:outline-none";
+  "w-full rounded-[4px] border border-line bg-panel px-4 py-3 text-sm text-cream placeholder:text-muted/60 focus:border-cream focus:outline-none";
 
 export default function ContactPage({ lang }: { lang: Lang }) {
   const t = dictionaries[lang].contact;

@@ -30,8 +30,13 @@ export default function HomePage({ lang }: { lang: Lang }) {
           </div>
 
           <div className="mt-16">
-            {/* Hero showreel: muted autoplay, ≤15s, poster image. Replace placeholder with embed. */}
-            <VideoPlaceholder label={t.showreelLabel} sublabel={t.showreelSub} />
+            {/* Hero showreel: muted autoplay, ≤15s, poster image. Replace placeholder with embed.
+                21:9 letterbox ratio on larger screens — reads cinema, not slideshow. */}
+            <VideoPlaceholder
+              label={t.showreelLabel}
+              sublabel={t.showreelSub}
+              aspect="aspect-video sm:aspect-[21/9]"
+            />
           </div>
         </div>
       </section>

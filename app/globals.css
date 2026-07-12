@@ -28,13 +28,28 @@ body {
     sans-serif;
 }
 
+/*
+ * Chinese pages: serif CJK display type reads dated to native eyes — the
+ * tech/cinematic convention (Apple CN, DJI) is bold heiti. Scope-override the
+ * display font chain to sans, and drop the latin tracking-tight on headings,
+ * which cramps CJK glyphs.
+ */
+.zh {
+  --font-fraunces: var(--font-inter);
+  --font-noto-serif-sc: var(--font-noto-sans-sc);
+}
+.zh .font-display {
+  letter-spacing: 0;
+  font-weight: 700;
+}
+
 @layer components {
-  /* Square, typographic buttons — no rounding, no ornament */
+  /* Typographic buttons — barely-rounded, subtle lift on hover */
   .btn-solid {
-    @apply inline-flex items-center justify-center gap-3 bg-cream px-7 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-ink transition-colors hover:bg-gold;
+    @apply inline-flex items-center justify-center gap-3 rounded-[4px] bg-cream px-7 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-ink transition-all duration-200 hover:-translate-y-px hover:bg-gold;
   }
   .btn-outline {
-    @apply inline-flex items-center justify-center gap-3 border border-cream/30 px-7 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-cream transition-colors hover:border-cream hover:bg-cream hover:text-ink;
+    @apply inline-flex items-center justify-center gap-3 rounded-[4px] border border-cream/30 px-7 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-cream transition-all duration-200 hover:-translate-y-px hover:border-cream hover:bg-cream hover:text-ink;
   }
   .eyebrow {
     @apply text-[0.65rem] font-medium uppercase tracking-[0.35em] text-gold;

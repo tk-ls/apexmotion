@@ -24,11 +24,11 @@ export default function VideoPlaceholder({
 }: VideoPlaceholderProps) {
   return (
     <div
-      className={`relative ${aspect} w-full overflow-hidden border border-line bg-panel`}
+      className={`relative ${aspect} w-full overflow-hidden rounded-lg border border-line bg-panel`}
     >
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 p-6 text-center">
         <span
-          className="flex h-12 w-12 items-center justify-center border border-cream/40 text-sm text-cream"
+          className="flex h-12 w-12 items-center justify-center rounded-full border border-cream/40 text-sm text-cream"
           aria-hidden
         >
           ▶
