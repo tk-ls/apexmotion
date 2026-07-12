@@ -271,260 +271,304 @@ const en = {
 export type Dict = typeof en;
 
 const zh: Dict = {
-  logo: { primary: "一鸣惊人传媒", secondary: "Apex Motion Studios" },
-  nav: {
-    items: [
-      { path: "/", label: "首页" },
-      { path: "/portfolio", label: "作品" },
-      { path: "/services", label: "服务" },
-      { path: "/about", label: "工作室" },
-      { path: "/contact", label: "联系" },
-    ],
-    cta: "预约拍摄",
+  "logo": {
+    "primary": "一鸣惊人传媒",
+    "secondary": "Apex Motion Studios"
   },
-  footer: {
-    badges: ["CASA 注册运营人", "全额保险保障", "现场安全官"],
-    blurb: "为悉尼高端房产提供沉浸式 FPV 影片与电影级外景摄影。",
-    explore: "探索",
-    exploreLinks: [
-      { path: "/portfolio", label: "作品集" },
-      { path: "/services", label: "服务与套系" },
-      { path: "/about", label: "工作室" },
-      { path: "/contact", label: "预约拍摄" },
+  "nav": {
+    "items": [
+      {
+        "path": "/",
+        "label": "首页"
+      },
+      {
+        "path": "/portfolio",
+        "label": "作品"
+      },
+      {
+        "path": "/services",
+        "label": "服务"
+      },
+      {
+        "path": "/about",
+        "label": "工作室"
+      },
+      {
+        "path": "/contact",
+        "label": "联系"
+      }
     ],
-    contact: "联系方式",
-    servicing: "服务大悉尼地区",
-    rights: "一鸣惊人传媒 Apex Motion Studios",
+    "cta": "预约拍摄"
   },
-  trust: {
-    eyebrow: "信任与合规",
-    heading: "专业执飞，持证保障。",
-    items: [
-      {
-        index: "01",
-        title: "CASA 注册运营人",
-        body: "每次飞行均由注册运营人与专职安全官全程督导——杜绝监管意外，绝不因合规问题取消拍摄。",
-      },
-      {
-        index: "02",
-        title: "全额公众责任保险",
-        body: "每个项目均有全面的保险覆盖，中介机构与业主均无任何责任风险。",
-      },
-      {
-        index: "03",
-        title: "双人专业团队",
-        body: "每次拍摄均配备飞手与安全官——一个值得客户信赖的制作伙伴，守护他们最贵重的资产。",
-      },
+  "footer": {
+    "badges": [
+      "CASA 注册运营人",
+      "全额公众责任险",
+      "现场安全官"
     ],
-  },
-  home: {
-    eyebrow: "悉尼 · 高端房产影像",
-    h1: "好房源，自己会说话。在首次开放看房之前。",
-    sub: "为悉尼最具辨识度的高端房源，打造一镜到底的沉浸式无人机导览与电影级外景影像。",
-    ctaPrimary: "查询档期",
-    ctaSecondary: "观看作品",
-    showreelLabel: "精选集锦——您最精彩的 15 秒 FPV 镜头",
-    showreelSub: "静音自动播放 · 替换为 Vimeo Pro 或 Mux 嵌入",
-    aboutEyebrow: "工作室",
-    aboutHeading: "以沉浸式影像叙事，打动买家、撬动市场。",
-    aboutP1:
-      "一鸣惊人传媒（Apex Motion Studios）是一家立足悉尼的影像制作工作室，专注于高端房产的沉浸式视觉叙事。我们标志性的一镜到底 FPV 导览，带领买家在一次流畅的飞行中穿越整套房源——空间的动线、尺度与光影，以静态照片无法企及的方式徐徐展开。",
-    aboutP2:
-      "配合电影级航拍外景，最终呈现的是一条令人过目难忘的房源影片：吸引更多高意向买家到场看房，助力房产更快成交。每次拍摄均有完善的保险保障、完全符合 CASA 民航规范，并由专业双人团队执行——中介方获得广播级的成片品质，无需承担任何运营风险。",
-    aboutLink: "了解工作室",
-    featureLabel: "一镜到底 FPV 导览——精选示例",
-    featureSub: "点击播放 · 延迟加载",
-    servicesEyebrow: "服务内容",
-    servicesHeading: "提升房产营销的三种方式。",
-    servicesLink: "服务与套系",
-    services: [
+    "blurb": "专注悉尼高端房产影像：沉浸式 FPV 导览与电影级外景摄影。",
+    "explore": "导航",
+    "exploreLinks": [
       {
-        index: "01",
-        title: "臻选外景",
-        body: "电影级航拍外景与地面稳定器摄影，让每套房源赢得先声夺人的第一印象。",
-        featured: false,
+        "path": "/portfolio",
+        "label": "作品集"
       },
       {
-        index: "02",
-        title: "沉浸导览",
-        body: "我们的招牌一镜到底室内 FPV 飞行——一次流畅完整的空间之旅，尽显动线、尺度与光影。",
-        featured: true,
+        "path": "/services",
+        "label": "服务与套系"
       },
       {
-        index: "03",
-        title: "全案套系",
-        body: "完整的营销组合：沉浸导览、暮色拍摄、生活方式镜头与竖版社交媒体剪辑——快速交付。",
-        featured: false,
+        "path": "/about",
+        "label": "工作室"
       },
+      {
+        "path": "/contact",
+        "label": "预约拍摄"
+      }
     ],
-    mostPopular: "最受欢迎",
-    finalHeading: "您的下一套房源，值得比照片更好的呈现。",
-    finalCta: "查询档期",
-    finalNote: "告诉我们房源信息——我们将在一个工作日内确认档期。",
+    "contact": "联系方式",
+    "servicing": "服务大悉尼地区",
+    "rights": "一鸣惊人传媒 Apex Motion Studios"
   },
-  portfolio: {
-    eyebrow: "作品集",
-    h1: "每套房产都有自己的故事。我们用一镜到底来讲述。",
-    sub: "精选沉浸式 FPV 导览与电影级外景影片，建议开启声音观看。",
-    featuredLabel: "主打影片——您最出色的一镜到底 FPV 导览",
-    featuredSub: "通栏展示 · 点击播放并配封面帧",
-    sampleNote: "示例项目",
-    projects: [
-      { suburb: "Mosman", type: "海港住宅" },
-      { suburb: "Barangaroo", type: "顶层公寓" },
-      { suburb: "Vaucluse", type: "庄园宅邸" },
-      { suburb: "Surry Hills", type: "仓库改造" },
-      { suburb: "Palm Beach", type: "海滨度假宅" },
-      { suburb: "Kellyville", type: "开发项目展示" },
-    ],
-    closingHeading: "想让您的房源也如此呈现？",
-    closingCta: "查询档期",
-  },
-  services: {
-    eyebrow: "服务与套系",
-    h1: "按房源计价的拍摄套系，为营销周期而生。",
-    sub: "简单透明的按套计价，随房源规格灵活调整——没有时薪，没有意外。每个套系均按营销需求单独报价。",
-    mostPopular: "最受欢迎",
-    quoteCta: "获取报价",
-    packages: [
+  "trust": {
+    "eyebrow": "信任与合规",
+    "heading": "专业执飞，资质托底。",
+    "items": [
       {
-        index: "01",
-        name: "臻选外景",
-        tagline: "先声夺人的第一印象",
-        featured: false,
-        includes: [
-          "电影级无人机航拍外景",
-          "高端稳定器摄影",
-          "精修亮点照片集",
-          "调色完成的 60 秒外景影片",
-          "3 个工作日内交付",
-        ],
+        "index": "01",
+        "title": "CASA 注册运营人",
+        "body": "每一次飞行，都由注册运营人兼安全官全程把关。合规功课在起飞前做足——没有监管意外，也不会临时取消拍摄。"
       },
       {
-        index: "02",
-        name: "沉浸导览",
-        tagline: "招牌一镜到底 FPV 体验",
-        featured: true,
-        includes: [
+        "index": "02",
+        "title": "全额公众责任险",
+        "body": "每一次拍摄，保险在开拍前就已全额到位。即便现场有意外，责任风险也不会落到中介机构或业主头上。"
+      },
+      {
+        "index": "03",
+        "title": "专职双人团队",
+        "body": "到场的永远是两个人：飞手专注飞行，安全官照看现场。在业主最贵重的资产里拍摄，我们是值得托付的制作伙伴。"
+      }
+    ]
+  },
+  "home": {
+    "eyebrow": "悉尼·高端房产影像",
+    "h1": "首次开放看房前，买家已经动心。",
+    "sub": "一镜到底 FPV 导览与电影级外景影像，只为悉尼最出众的房源。",
+    "ctaPrimary": "查询档期",
+    "ctaSecondary": "观看作品",
+    "showreelLabel": "精选集锦——放您最出彩的 15 秒 FPV 镜头",
+    "showreelSub": "静音自动播放 · 替换为 Vimeo Pro 或 Mux 嵌入",
+    "aboutEyebrow": "工作室",
+    "aboutHeading": "沉浸式影像，先打动买家，再打动市场。",
+    "aboutP1": "一鸣惊人传媒（Apex Motion Studios）是悉尼一家高端房产影像工作室。我们的招牌是一镜到底 FPV 导览：一次流畅的飞行，带买家穿过整套房源，动线、尺度与光影一路展开。这样的临场感，静态照片给不了。",
+    "aboutP2": "配上电影级航拍外景，房源第一眼就与众不同——更多高意向买家走进开放看房，成交也来得更快。每次拍摄都有全额公众责任险，符合 CASA 规范，由专职双人团队执行；您拿到广播级成片，不必承担任何运营风险。",
+    "aboutLink": "了解工作室",
+    "featureLabel": "一镜到底 FPV 导览——精选示例",
+    "featureSub": "点击播放 · 延迟加载",
+    "servicesEyebrow": "服务内容",
+    "servicesHeading": "一套房源，三种拍法。",
+    "servicesLink": "服务与套系",
+    "services": [
+      {
+        "index": "01",
+        "title": "臻选外景",
+        "body": "电影级航拍外景与地面稳定器摄影。房源的第一印象，从空中开始。",
+        "featured": false
+      },
+      {
+        "index": "02",
+        "title": "沉浸导览",
+        "body": "我们的招牌：一镜到底室内 FPV 导览。一趟飞行走完整套房源，动线、尺度与光影，一并交代清楚。",
+        "featured": true
+      },
+      {
+        "index": "03",
+        "title": "旗舰全案",
+        "body": "一次拍齐整套营销素材：沉浸导览、暮色拍摄、生活方式镜头与竖版剪辑——48 小时优先交付。",
+        "featured": false
+      }
+    ],
+    "mostPopular": "最受欢迎",
+    "finalHeading": "下一套房源，不该只有照片。",
+    "finalCta": "查询档期",
+    "finalNote": "把房源信息告诉我们，一个工作日内确认档期。"
+  },
+  "portfolio": {
+    "eyebrow": "作品集",
+    "h1": "每套房子都有故事，我们一镜到底讲完。",
+    "sub": "精选沉浸式 FPV 导览与电影级外景影片，每一支都值得开着声音看。",
+    "featuredLabel": "主打影片——您最出色的一镜到底 FPV 导览",
+    "featuredSub": "通栏展示 · 点击播放，带封面帧",
+    "sampleNote": "示例项目",
+    "closingHeading": "想让您的房源也这样亮相？",
+    "closingCta": "查询档期",
+    "projects": [
+      {
+        "suburb": "Mosman",
+        "type": "海港住宅"
+      },
+      {
+        "suburb": "Barangaroo",
+        "type": "顶层公寓"
+      },
+      {
+        "suburb": "Vaucluse",
+        "type": "庄园宅邸"
+      },
+      {
+        "suburb": "Surry Hills",
+        "type": "仓库改造"
+      },
+      {
+        "suburb": "Palm Beach",
+        "type": "海滨度假宅"
+      },
+      {
+        "suburb": "Kellyville",
+        "type": "开发项目展示"
+      }
+    ]
+  },
+  "services": {
+    "eyebrow": "服务与套系",
+    "h1": "套系按房源计价，为营销周期而设。",
+    "sub": "一套房源，一份报价，价格随规格而定。不按小时计费，也没有意料之外的账单。三档套系，均按营销需求单独报价。",
+    "mostPopular": "最受欢迎",
+    "quoteCta": "获取报价",
+    "packages": [
+      {
+        "index": "01",
+        "name": "臻选外景",
+        "tagline": "先声夺人的第一印象",
+        "featured": false,
+        "includes": [
+          "电影级外景航拍",
+          "地面稳定器摄影",
+          "精修房源照片集",
+          "60 秒外景调色成片",
+          "3 个工作日内交付"
+        ]
+      },
+      {
+        "index": "02",
+        "name": "沉浸导览",
+        "tagline": "一次飞行，穿越整套房源",
+        "featured": true,
+        "includes": [
           "包含「臻选外景」全部内容",
           "一镜到底室内 FPV 导览",
           "中介品牌定制成片",
           "Instagram 与 TikTok 竖版剪辑",
           "正版配乐与声音设计",
-          "3 个工作日内交付",
-        ],
+          "3 个工作日内交付"
+        ]
       },
       {
-        index: "03",
-        name: "全案套系",
-        tagline: "旗舰级完整营销方案",
-        featured: false,
-        includes: [
+        "index": "03",
+        "name": "旗舰全案",
+        "tagline": "营销所需，一次备齐",
+        "featured": false,
+        "includes": [
           "包含「沉浸导览」全部内容",
-          "暮色外景拍摄",
+          "暮色拍摄",
           "生活方式与周边环境镜头",
           "48 小时优先交付",
-          "专属营销顾问沟通",
-        ],
-      },
+          "专属营销顾问"
+        ]
+      }
     ],
-    retainerPre: "提供多房源与中介机构长期合作方案——",
-    retainerLink: "欢迎洽谈您的房源计划",
-    retainerPost: "。",
-    processEyebrow: "合作流程",
-    processHeading: "从咨询到交付，只需数日。",
-    process: [
+    "retainerPre": "多房源拍摄与中介机构长期合作均可安排——",
+    "retainerLink": "聊聊您接下来的房源",
+    "retainerPost": "。",
+    "processEyebrow": "合作流程",
+    "processHeading": "从询价到可直接投放，只需几天。",
+    "process": [
       {
-        step: "01",
-        title: "咨询",
-        body: "发送房源地址与营销时间表，我们将在一个工作日内确认档期并提供专属报价。",
+        "step": "01",
+        "title": "询价",
+        "body": "发来房源地址与营销时间表即可。档期与报价，一个工作日内回复。"
       },
       {
-        step: "02",
-        title: "拍摄",
-        body: "双人团队全程负责现场事务——航线规划、安全检查与拍摄执行，通常一次完成。",
+        "step": "02",
+        "title": "拍摄",
+        "body": "现场交给双人团队：航线规划、安全检查与正式拍摄，通常一次完成。"
       },
       {
-        step: "03",
-        title: "交付",
-        body: "3 个工作日内交付可直接投放的影片、竖版剪辑与照片（全案套系 48 小时）。",
-      },
-    ],
+        "step": "03",
+        "title": "交付",
+        "body": "影片、竖版剪辑与照片，3 个工作日内交付，拿到即可直接投放。选「旗舰全案」，48 小时优先交付。"
+      }
+    ]
   },
-  about: {
-    eyebrow: "工作室",
-    h1: "我们是制作伙伴，而非无人机操作员。",
-    p1a: "一鸣惊人传媒源于一个简单的观察：卖得最快的房子，是买家已经能想象自己住进去的房子。静态照片只能展示房屋本身，而一镜到底的 FPV 导览让买家",
-    p1em: "走进家中",
-    p1b: "——在亲临现场之前，先感受它的动线、尺度与光影。",
-    p2: "每次拍摄我们都以专职双人团队执行。注册运营人兼安全官负责航线规划、风险评估与合规事务，飞手则全情专注于创作本身——以一条流畅完整的飞行路线穿越房源，而传统摄像师需要整整一天的分镜剪辑才能接近这种效果。",
-    p3: "这样的架构是有意为之。它意味着中介与业主在现场得到的是一个专业的制作伙伴：有保险、合规、可问责——既有电影团队的创作直觉，也有成熟供应商的稳定可靠。",
-    credentialsHeading: "资质认证",
-    credentials: [
+  "about": {
+    "eyebrow": "工作室",
+    "h1": "制作伙伴，而非无人机操作员。",
+    "p1a": "一鸣惊人传媒（Apex Motion Studios）的起点，是一个朴素的观察：卖得最快的房子，是买家已经能想象自己住进去的房子。静态照片拍的是房子，一镜到底 FPV 导览让买家提前",
+    "p1em": "走进一个家",
+    "p1b": "——动线、尺度与光影，人还没进门，心里已经有数。",
+    "p2": "每次拍摄，到场的都是专职双人团队。注册运营人兼安全官统筹航线规划、风险评估与合规，飞手只专注一件事——创作。一条流畅的飞行路线穿越整套房源，换作传统摄像师，剪上一整天也只能接近这个效果。",
+    "p3": "这样的架构是刻意为之。中介和业主请到现场的，是一个专业的制作伙伴：有全额公众责任险，符合 CASA 规范，责任归属清楚。论创作，有电影团队的直觉；论交付，有成熟供应商的可靠。",
+    "credentialsHeading": "资质与保障",
+    "credentials": [
       "每次拍摄均有 CASA 注册运营人在场",
-      "专职安全官与完备的飞行计划文档",
-      "全额公众责任保险",
-      "服务大悉尼地区",
+      "专职安全官与留档备查的飞行计划",
+      "全额公众责任险",
+      "服务大悉尼地区"
     ],
-    everyShootHeading: "每次拍摄包含",
-    everyShootBody:
-      "拍摄前现场评估 · 符合 CASA 规范的飞行计划 · 现场安全官 · 电影级 FPV 拍摄 · 高端稳定器与航拍外景 · 3 个工作日内交付调色成片。",
-    closingHeading: "亲自看看我们的作品。",
-    closingWork: "查看作品",
-    closingBook: "预约拍摄",
+    "everyShootHeading": "每次拍摄均包含",
+    "everyShootBody": "拍摄前实地勘查 · 符合 CASA 规范的飞行计划 · 现场安全官 · 电影级 FPV 拍摄 · 高端稳定器摄影与航拍外景 · 3 个工作日内交付调色成片。",
+    "closingHeading": "剩下的，交给作品来说。",
+    "closingWork": "查看作品",
+    "closingBook": "预约拍摄"
   },
-  contact: {
-    eyebrow: "联系我们",
-    h1: "查询您房源的拍摄档期。",
-    sub: "告诉我们房源信息与营销时间表——我们将在一个工作日内回复档期与专属报价。",
-    name: "姓名",
-    agency: "所属中介机构",
-    email: "邮箱",
-    phone: "电话",
-    address: "房源地址",
-    packageLabel: "意向套系",
-    packageOptions: [
-      "暂不确定",
+  "contact": {
+    "eyebrow": "预约与询价",
+    "h1": "查询档期，其余交给我们。",
+    "sub": "留下房源信息与营销时间表。档期与报价，一个工作日内回复。",
+    "name": "姓名",
+    "agency": "所属中介机构",
+    "email": "邮箱",
+    "phone": "电话",
+    "address": "房源地址",
+    "packageLabel": "意向套系",
+    "packageOptions": [
+      "还没想好",
       "臻选外景",
       "沉浸导览",
-      "全案套系",
-      "多房源 / 机构长期合作",
+      "旗舰全案",
+      "多房源与中介机构长期合作"
     ],
-    timeline: "期望拍摄时间",
-    timelinePlaceholder: "例如：7 月 21 日当周",
-    message: "其他需要说明的信息",
-    submit: "查询档期",
-    talkHeading: "更愿意直接沟通？",
-    areaHeading: "服务范围",
-    areaBody:
-      "大悉尼地区——从东区、下北岸到北部海滩、内西区与山区。新州其他地区可协商安排。",
+    "timeline": "期望拍摄时间",
+    "timelinePlaceholder": "例如：7 月 21 日当周",
+    "message": "补充说明",
+    "submit": "查询档期",
+    "talkHeading": "更愿意直接聊？",
+    "areaHeading": "服务范围",
+    "areaBody": "服务覆盖大悉尼：东区、下北岸、北部海滩、内西区与山区（Hills District）。新州其他地区可另行安排。"
   },
-  meta: {
-    home: {
-      title: "一鸣惊人传媒 — 悉尼高端房产 FPV 影像 | Apex Motion Studios",
-      description:
-        "为悉尼最具辨识度的高端房源打造一镜到底 FPV 无人机导览与电影级外景摄影。全额保险，符合 CASA 规范。",
+  "meta": {
+    "home": {
+      "title": "一鸣惊人传媒 Apex Motion Studios | 悉尼高端房产 FPV 影像",
+      "description": "一次流畅飞行，看清一套房子的动线、尺度与光影。我们为悉尼高端房源拍摄一镜到底 FPV 导览与电影级外景，让买家在开放看房前先动心。全额公众责任险，符合 CASA 规范。"
     },
-    portfolio: {
-      title: "作品集 | 一鸣惊人传媒",
-      description: "精选一镜到底 FPV 房产导览与电影级外景影片。",
+    "portfolio": {
+      "title": "作品集 | 一鸣惊人传媒",
+      "description": "精选作品：悉尼高端房源的一镜到底 FPV 导览与电影级外景影片。一次流畅的飞行，让买家在开放看房前看懂动线与尺度。每次执飞都符合 CASA 规范。"
     },
-    services: {
-      title: "服务与套系 | 一鸣惊人传媒",
-      description:
-        "按房源计价的拍摄套系：电影级外景、一镜到底 FPV 导览与全案营销方案。全额保险，符合 CASA 规范。",
+    "services": {
+      "title": "服务与套系 | 一鸣惊人传媒",
+      "description": "三档套系，按房源计价：「臻选外景」「沉浸导览」与「旗舰全案」，涵盖电影级外景与一镜到底 FPV 导览，成片可直接投放。3 个工作日内交付，旗舰全案 48 小时优先交付。"
     },
-    about: {
-      title: "工作室 | 一鸣惊人传媒",
-      description:
-        "一鸣惊人传媒是立足悉尼的高端房产影像制作工作室——专业双人团队，全额保险，符合 CASA 规范。",
+    "about": {
+      "title": "工作室 | 一鸣惊人传媒",
+      "description": "一鸣惊人传媒（Apex Motion Studios）是悉尼一家高端房产影像工作室。每次拍摄，专职双人团队到场：注册运营人兼安全官把关现场，飞手专注飞行。全额公众责任险，符合 CASA 规范。"
     },
-    contact: {
-      title: "预约拍摄 | 一鸣惊人传媒",
-      description:
-        "查询您房源的拍摄档期——我们将在一个工作日内回复档期与专属报价。",
-    },
-  },
+    "contact": {
+      "title": "预约拍摄 | 一鸣惊人传媒",
+      "description": "查询您房源的拍摄档期。留下位置与基本信息，我们在一个工作日内回复，确认档期并附上定制报价。趁首次开放看房之前，把影像准备好。"
+    }
+  }
 };
 
 export const dictionaries: Record<Lang, Dict> = { en, zh };
