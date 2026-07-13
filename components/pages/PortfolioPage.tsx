@@ -1,5 +1,6 @@
 import Link from "next/link";
 import VideoPlaceholder from "@/components/VideoPlaceholder";
+import { clauses } from "@/lib/clauses";
 import { dictionaries, href, type Lang } from "@/lib/i18n";
 
 /**
@@ -13,7 +14,7 @@ export default function PortfolioPage({ lang }: { lang: Lang }) {
     <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
       <p className="eyebrow">{t.eyebrow}</p>
       <h1 className="mt-4 max-w-4xl text-4xl font-extrabold leading-tight tracking-tight text-text sm:text-5xl">
-        {t.h1}
+        {clauses(t.h1, lang)}
       </h1>
       <p className="mt-5 max-w-2xl text-muted">{t.sub}</p>
 
@@ -51,7 +52,7 @@ export default function PortfolioPage({ lang }: { lang: Lang }) {
 
       <div className="card mt-14 flex flex-col items-start gap-6 p-10 sm:flex-row sm:items-center sm:justify-between">
         <h2 className="max-w-xl text-2xl font-bold tracking-tight text-text sm:text-3xl">
-          {t.closingHeading}
+          {clauses(t.closingHeading, lang)}
         </h2>
         <Link href={href(lang, "/contact")} className="btn-solid shrink-0">
           {t.closingCta}

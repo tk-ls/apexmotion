@@ -1,3 +1,4 @@
+import { clauses } from "@/lib/clauses";
 import { dictionaries, type Lang } from "@/lib/i18n";
 
 export default function TrustBand({ lang }: { lang: Lang }) {
@@ -8,7 +9,7 @@ export default function TrustBand({ lang }: { lang: Lang }) {
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <p className="eyebrow">{t.eyebrow}</p>
         <h2 className="mt-3 max-w-2xl text-3xl font-bold tracking-tight text-text sm:text-4xl">
-          {t.heading}
+          {clauses(t.heading, lang)}
         </h2>
         <div className="mt-10 grid gap-6 sm:grid-cols-3">
           {t.items.map((item) => (

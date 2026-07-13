@@ -99,8 +99,10 @@ export default function CinemaSection({
           {eyebrow}
         </p>
 
+        {/* border (not ring/box-shadow) + isolate: avoids Safari hairline
+            seams when the frame is scaled and filtered */}
         <div
-          className="relative w-[min(92vw,64rem)] overflow-hidden rounded-xl bg-black ring-1 ring-white/10"
+          className="relative isolate w-[min(92vw,64rem)] transform-gpu overflow-hidden rounded-xl border border-white/10 bg-black"
           style={{
             transform: `scale(${scale})`,
             filter: `brightness(${brightness})`,
@@ -110,7 +112,7 @@ export default function CinemaSection({
           {videoOk ? (
             <video
               ref={videoRef}
-              className="aspect-video w-full object-cover"
+              className="block aspect-video w-full bg-black object-cover"
               src="/videos/showreel-placeholder.mp4"
               muted
               loop

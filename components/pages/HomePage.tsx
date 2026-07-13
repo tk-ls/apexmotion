@@ -3,6 +3,7 @@ import CinemaSection from "@/components/CinemaSection";
 import Reveal from "@/components/Reveal";
 import TrustBand from "@/components/TrustBand";
 import VideoPlaceholder from "@/components/VideoPlaceholder";
+import { clauses } from "@/lib/clauses";
 import { dictionaries, href, type Lang } from "@/lib/i18n";
 
 export default function HomePage({ lang }: { lang: Lang }) {
@@ -20,7 +21,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
         <div className="relative mx-auto max-w-6xl px-4 pb-24 pt-16 sm:px-6 sm:pt-28">
           <p className="eyebrow">{t.eyebrow}</p>
           <h1 className="mt-4 max-w-4xl text-4xl font-extrabold leading-tight tracking-tight text-text sm:text-6xl">
-            {t.h1}
+            {clauses(t.h1, lang)}
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">
             {t.sub}
@@ -51,7 +52,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
               <div>
                 <p className="eyebrow">{t.aboutEyebrow}</p>
                 <h2 className="mt-3 text-3xl font-bold tracking-tight text-text sm:text-4xl">
-                  {t.aboutHeading}
+                  {clauses(t.aboutHeading, lang)}
                 </h2>
                 <p className="mt-6 leading-relaxed text-muted">{t.aboutP1}</p>
                 <Link
@@ -74,7 +75,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
             <div>
               <p className="eyebrow">{t.servicesEyebrow}</p>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-text sm:text-4xl">
-                {t.servicesHeading}
+                {clauses(t.servicesHeading, lang)}
               </h2>
             </div>
             <Link
@@ -84,14 +85,14 @@ export default function HomePage({ lang }: { lang: Lang }) {
               {t.servicesLink} →
             </Link>
           </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <div className="mt-10 grid gap-6 md:mt-12 md:grid-cols-3">
             {t.services.map((service, i) => (
-              <Reveal key={service.index} delay={i * 120}>
+              <Reveal key={service.index} delay={i * 120} className="h-full">
                 <div
-                  className={`card h-full p-7 ${service.featured ? "ring-2 ring-accent" : ""}`}
+                  className={`card relative h-full p-7 ${service.featured ? "ring-2 ring-accent" : ""}`}
                 >
                   {service.featured && (
-                    <span className="mb-3 inline-block rounded-full bg-accent px-3 py-1 text-xs font-semibold text-bg">
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-accent px-3 py-1 text-xs font-semibold text-bg">
                       {t.mostPopular}
                     </span>
                   )}
@@ -117,7 +118,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
           <div className="card flex flex-col items-start gap-6 p-10 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <h2 className="max-w-xl text-2xl font-bold tracking-tight text-text sm:text-3xl">
-                {t.finalHeading}
+                {clauses(t.finalHeading, lang)}
               </h2>
               <p className="mt-2 max-w-md text-sm text-muted">{t.finalNote}</p>
             </div>

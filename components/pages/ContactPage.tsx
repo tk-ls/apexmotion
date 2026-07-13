@@ -1,3 +1,4 @@
+import { clauses } from "@/lib/clauses";
 import { dictionaries, type Lang } from "@/lib/i18n";
 
 const inputClasses =
@@ -10,7 +11,7 @@ export default function ContactPage({ lang }: { lang: Lang }) {
     <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
       <p className="eyebrow">{t.eyebrow}</p>
       <h1 className="mt-4 max-w-4xl text-4xl font-extrabold leading-tight tracking-tight text-text sm:text-5xl">
-        {t.h1}
+        {clauses(t.h1, lang)}
       </h1>
       <p className="mt-5 max-w-2xl text-muted">{t.sub}</p>
 

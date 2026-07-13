@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { clauses } from "@/lib/clauses";
 import { dictionaries, href, type Lang } from "@/lib/i18n";
 
 export default function AboutPage({ lang }: { lang: Lang }) {
@@ -9,7 +10,7 @@ export default function AboutPage({ lang }: { lang: Lang }) {
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <p className="eyebrow">{t.eyebrow}</p>
         <h1 className="mt-4 max-w-4xl text-4xl font-extrabold leading-tight tracking-tight text-text sm:text-5xl">
-          {t.h1}
+          {clauses(t.h1, lang)}
         </h1>
 
         <div className="mt-12 grid gap-12 md:grid-cols-2">
@@ -45,7 +46,7 @@ export default function AboutPage({ lang }: { lang: Lang }) {
       <div className="mx-auto max-w-6xl px-4 pb-20 sm:px-6">
         <div className="card flex flex-col items-start gap-6 p-10 sm:flex-row sm:items-center sm:justify-between">
           <h2 className="max-w-xl text-2xl font-bold tracking-tight text-text sm:text-3xl">
-            {t.closingHeading}
+            {clauses(t.closingHeading, lang)}
           </h2>
           <div className="flex shrink-0 flex-wrap gap-4">
             <Link href={href(lang, "/portfolio")} className="btn-outline">
