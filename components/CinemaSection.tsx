@@ -110,9 +110,11 @@ export default function CinemaSection({
           }}
         >
           {videoOk ? (
+            {/* Slightly oversized (~10px) so the frame crops the video's
+                edges — hides browser video-layer edge artifacts */}
             <video
               ref={videoRef}
-              className="block aspect-video w-full bg-black object-cover"
+              className="block aspect-video w-full scale-[1.01] bg-black object-cover"
               src="/videos/showreel-placeholder.mp4"
               muted
               loop
