@@ -61,7 +61,19 @@ export default function Header({ lang }: { lang: Lang }) {
           aria-label="Toggle navigation menu"
           onClick={() => setOpen((v) => !v)}
         >
-          <span aria-hidden>{open ? "✕" : "☰"}</span>
+          {open ? (
+            <span aria-hidden>✕</span>
+          ) : (
+            /* SVG burger — the ☰ glyph sits below the button's centre */
+            <svg viewBox="0 0 16 16" fill="none" className="h-4 w-4" aria-hidden>
+              <path
+                d="M1 3.5h14M1 8h14M1 12.5h14"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="square"
+              />
+            </svg>
+          )}
         </button>
       </div>
 
