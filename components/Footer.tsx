@@ -50,7 +50,7 @@ export default function Footer({ lang }: { lang: Lang }) {
             </ul>
           </nav>
 
-          <div className="text-sm sm:justify-self-end">
+          <div className="text-sm">
             <p className="mb-4 font-semibold text-text">{t.contact}</p>
             <ul className="space-y-2 text-muted">
               <li>
