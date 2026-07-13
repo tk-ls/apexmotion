@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Check from "@/components/Check";
 import Logo from "@/components/Logo";
 import { dictionaries, href, type Lang } from "@/lib/i18n";
 
@@ -15,10 +16,10 @@ export default function Footer({ lang }: { lang: Lang }) {
               className="flex items-center gap-2 text-sm font-medium text-muted"
             >
               <span
-                className="flex h-5 w-5 items-center justify-center rounded-full bg-accent/10 text-xs text-accent"
+                className="flex h-5 w-5 items-center justify-center rounded-full bg-accent/10 text-accent"
                 aria-hidden
               >
-                ✓
+                <Check className="h-2.5 w-2.5" />
               </span>
               {badge}
             </span>
@@ -33,7 +34,7 @@ export default function Footer({ lang }: { lang: Lang }) {
             </p>
           </div>
 
-          <nav className="text-sm">
+          <nav className="text-sm sm:justify-self-center">
             <p className="mb-4 font-semibold text-text">{t.explore}</p>
             <ul className="space-y-2">
               {t.exploreLinks.map((link) => (
@@ -49,7 +50,7 @@ export default function Footer({ lang }: { lang: Lang }) {
             </ul>
           </nav>
 
-          <div className="text-sm">
+          <div className="text-sm sm:justify-self-end">
             <p className="mb-4 font-semibold text-text">{t.contact}</p>
             <ul className="space-y-2 text-muted">
               <li>

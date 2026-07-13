@@ -65,9 +65,9 @@ export default function HomePage({ lang }: { lang: Lang }) {
                 <p className="mt-6 leading-relaxed text-muted">{t.aboutP1}</p>
                 <Link
                   href={href(lang, "/about")}
-                  className="mt-6 inline-block text-sm font-semibold text-accent hover:text-accent-hover"
+                  className="mt-6 inline-block text-sm font-semibold text-accent underline underline-offset-4 hover:text-accent-hover"
                 >
-                  {t.aboutLink} →
+                  {t.aboutLink}
                 </Link>
               </div>
               <div className="relative overflow-hidden rounded-xl bg-black">
@@ -97,9 +97,9 @@ export default function HomePage({ lang }: { lang: Lang }) {
             </div>
             <Link
               href={href(lang, "/services")}
-              className="text-sm font-semibold text-accent hover:text-accent-hover"
+              className="text-sm font-semibold text-accent underline underline-offset-4 hover:text-accent-hover"
             >
-              {t.servicesLink} →
+              {t.servicesLink}
             </Link>
           </div>
           <div className="mt-10 grid gap-6 md:mt-12 md:grid-cols-3">
@@ -137,7 +137,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
               <h2 className="text-2xl font-bold tracking-tight text-text sm:text-3xl">
                 {clauses(t.finalHeading, lang)}
               </h2>
-              <p className="mt-2 max-w-md text-sm text-muted">{t.finalNote}</p>
+              <p className="mt-2 text-sm text-muted">{t.finalNote}</p>
             </div>
             <Link href={href(lang, "/contact")} className="btn-solid shrink-0">
               {t.finalCta}

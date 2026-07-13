@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Check from "@/components/Check";
 import { clauses } from "@/lib/clauses";
 import { dictionaries, href, type Lang } from "@/lib/i18n";
 
@@ -33,10 +34,10 @@ export default function ServicesPage({ lang }: { lang: Lang }) {
                 {pkg.includes.map((item) => (
                   <li key={item} className="flex gap-3">
                     <span
-                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/10 text-xs text-accent"
+                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent"
                       aria-hidden
                     >
-                      ✓
+                      <Check className="h-2.5 w-2.5" />
                     </span>
                     {item}
                   </li>
@@ -58,7 +59,7 @@ export default function ServicesPage({ lang }: { lang: Lang }) {
           {t.retainerPre}
           <Link
             href={href(lang, "/contact")}
-            className="font-semibold text-accent hover:text-accent-hover"
+            className="font-semibold text-accent underline underline-offset-4 hover:text-accent-hover"
           >
             {t.retainerLink}
           </Link>

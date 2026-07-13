@@ -1,3 +1,4 @@
+import Check from "@/components/Check";
 import { clauses } from "@/lib/clauses";
 import { dictionaries, type Lang } from "@/lib/i18n";
 
@@ -15,10 +16,10 @@ export default function TrustBand({ lang }: { lang: Lang }) {
           {t.items.map((item) => (
             <div key={item.index} className="card p-6">
               <span
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-accent/10 text-sm font-bold text-accent"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-accent/10 text-accent"
                 aria-hidden
               >
-                ✓
+                <Check className="h-3.5 w-3.5" />
               </span>
               <p className="mt-4 font-semibold text-text">{item.title}</p>
               <p className="mt-2 text-sm leading-relaxed text-muted">
