@@ -8,6 +8,7 @@ import { dictionaries, href, type Lang } from "@/lib/i18n";
 
 export default function HomePage({ lang }: { lang: Lang }) {
   const t = dictionaries[lang].home;
+  const common = dictionaries[lang].common;
 
   return (
     <>
@@ -31,21 +32,19 @@ export default function HomePage({ lang }: { lang: Lang }) {
                 </span>
               ))}
           </h1>
-          <p className="mt-5 text-lg leading-relaxed text-muted">
-            {t.sub}
-          </p>
+          <p className="mt-5 text-lg leading-relaxed text-muted">{t.sub}</p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link href={href(lang, "/contact")} className="btn-solid">
               {t.ctaPrimary}
             </Link>
-            <Link href={href(lang, "/portfolio")} className="btn-outline">
+            <Link href={href(lang, "/property")} className="btn-outline">
               {t.ctaSecondary}
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Screening room — pins full-screen, lights dim, showreel plays */}
+      {/* Screening room — sticky screen, lights dim, showreel plays */}
       <CinemaSection
         eyebrow={t.cinemaEyebrow}
         caption={t.cinemaCaption}
@@ -77,7 +76,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
                   className="block aspect-video w-full object-cover"
                 />
                 <span className="absolute right-3 top-3 rounded-full bg-black/60 px-2.5 py-1 text-[0.65rem] font-medium text-white backdrop-blur">
-                  {dictionaries[lang].portfolio.sampleNote}
+                  {common.sampleNote}
                 </span>
               </div>
             </div>
@@ -85,41 +84,30 @@ export default function HomePage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      {/* Services teaser */}
+      {/* Verticals */}
       <section>
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <div>
-              <p className="eyebrow">{t.servicesEyebrow}</p>
-              <h2 className="mt-3 text-3xl font-bold tracking-tight text-text sm:text-4xl">
-                {clauses(t.servicesHeading, lang)}
-              </h2>
-            </div>
-            <Link
-              href={href(lang, "/services")}
-              className="text-sm font-semibold text-accent underline underline-offset-4 hover:text-accent-hover"
-            >
-              {t.servicesLink}
-            </Link>
-          </div>
+          <p className="eyebrow">{t.verticalsEyebrow}</p>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-text sm:text-4xl">
+            {clauses(t.verticalsHeading, lang)}
+          </h2>
           <div className="mt-10 grid gap-6 md:mt-12 md:grid-cols-3">
-            {t.services.map((service, i) => (
-              <Reveal key={service.index} delay={i * 120} className="h-full">
-                <div
-                  className={`card relative h-full p-7 ${service.featured ? "ring-2 ring-accent" : ""}`}
+            {t.verticals.map((vertical, i) => (
+              <Reveal key={vertical.key} delay={i * 120} className="h-full">
+                <Link
+                  href={href(lang, `/${vertical.key}`)}
+                  className="card flex h-full flex-col p-7 transition-colors hover:border-muted"
                 >
-                  {service.featured && (
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-accent px-3 py-1 text-xs font-semibold text-bg">
-                      {t.mostPopular}
-                    </span>
-                  )}
                   <h3 className="text-xl font-bold text-text">
-                    {service.title}
+                    {vertical.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted">
-                    {service.body}
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
+                    {vertical.body}
                   </p>
-                </div>
+                  <span className="mt-5 text-sm font-semibold text-accent underline underline-offset-4">
+                    {vertical.link}
+                  </span>
+                </Link>
               </Reveal>
             ))}
           </div>
@@ -132,17 +120,17 @@ export default function HomePage({ lang }: { lang: Lang }) {
       <section>
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
           <Reveal>
-          <div className="card flex flex-col items-start gap-6 p-10 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <h2 className="text-2xl font-bold tracking-tight text-text sm:text-3xl">
-                {clauses(t.finalHeading, lang)}
-              </h2>
-              <p className="mt-2 text-sm text-muted">{t.finalNote}</p>
+            <div className="card flex flex-col items-start gap-6 p-10 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <h2 className="text-2xl font-bold tracking-tight text-text sm:text-3xl">
+                  {clauses(t.finalHeading, lang)}
+                </h2>
+                <p className="mt-2 text-sm text-muted">{t.finalNote}</p>
+              </div>
+              <Link href={href(lang, "/contact")} className="btn-solid shrink-0">
+                {t.finalCta}
+              </Link>
             </div>
-            <Link href={href(lang, "/contact")} className="btn-solid shrink-0">
-              {t.finalCta}
-            </Link>
-          </div>
           </Reveal>
         </div>
       </section>

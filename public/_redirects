@@ -1,0 +1,5 @@
+# Old single-vertical URLs -> new structure (Cloudflare Pages redirects)
+/portfolio /property 301
+/services /property/packages 301
+/zh/portfolio /zh/property 301
+/zh/services /zh/property/packages 301

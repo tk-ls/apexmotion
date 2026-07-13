@@ -6,6 +6,19 @@ import { useState } from "react";
 import Logo from "@/components/Logo";
 import { dictionaries, href, type Lang } from "@/lib/i18n";
 
+function Chevron({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 10 6" fill="none" className={className} aria-hidden>
+      <path
+        d="M1 1l4 4 4-4"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="square"
+      />
+    </svg>
+  );
+}
+
 function LangSwitch({ lang, className = "" }: { lang: Lang; className?: string }) {
   const pathname = usePathname() ?? "/";
   const basePath = pathname.replace(/^\/zh(?=\/|$)/, "") || "/";
@@ -35,7 +48,12 @@ function LangSwitch({ lang, className = "" }: { lang: Lang; className?: string }
 
 export default function Header({ lang }: { lang: Lang }) {
   const t = dictionaries[lang];
+  const pathname = usePathname() ?? "/";
   const [open, setOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
+
+  const isMenuActive = (key: string) =>
+    pathname.startsWith(href(lang, `/${key}`));
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-bg/95 backdrop-blur">
@@ -44,10 +62,51 @@ export default function Header({ lang }: { lang: Lang }) {
           <Logo lang={lang} />
         </Link>
 
-        <nav className="hidden items-center gap-7 md:flex">
-          {t.nav.items.map((item) => (
-            <NavLink key={item.path} lang={lang} path={item.path} label={item.label} />
+        {/* Desktop nav — hover/focus dropdowns per vertical */}
+        <nav className="hidden items-center gap-6 md:flex">
+          {t.nav.menus.map((menu) => (
+            <div key={menu.key} className="group relative">
+              <button
+                type="button"
+                className={`flex items-center gap-1.5 py-2 text-sm font-medium transition-colors hover:text-text ${
+                  isMenuActive(menu.key) ? "text-text" : "text-muted"
+                }`}
+              >
+                {menu.label}
+                <Chevron className="h-1.5 w-2.5 transition-transform group-hover:rotate-180" />
+              </button>
+              <div className="invisible absolute left-1/2 top-full -translate-x-1/2 pt-2 opacity-0 transition-all duration-150 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+                <div className="card w-56 p-2 shadow-xl shadow-black/40">
+                  {menu.items.map((item) => (
+                    <Link
+                      key={item.path}
+                      href={href(lang, item.path)}
+                      className={`block rounded-lg px-3 py-2 text-sm transition-colors hover:bg-surface hover:text-text ${
+                        pathname === href(lang, item.path)
+                          ? "text-text"
+                          : "text-muted"
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
           ))}
+
+          {t.nav.links.map((link) => (
+            <Link
+              key={link.path}
+              href={href(lang, link.path)}
+              className={`text-sm font-medium transition-colors hover:text-text ${
+                pathname === href(lang, link.path) ? "text-text" : "text-muted"
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
+
           <LangSwitch lang={lang} />
           <Link href={href(lang, "/contact")} className="btn-solid px-5 py-2.5">
             {t.nav.cta}
@@ -77,17 +136,60 @@ export default function Header({ lang }: { lang: Lang }) {
         </button>
       </div>
 
+      {/* Mobile nav — accordion per vertical */}
       {open && (
-        <nav className="border-t border-line bg-bg px-4 pb-6 pt-2 md:hidden">
-          {t.nav.items.map((item) => (
-            <MobileNavLink
-              key={item.path}
-              lang={lang}
-              path={item.path}
-              label={item.label}
-              onClick={() => setOpen(false)}
-            />
+        <nav className="max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-line bg-bg px-4 pb-6 pt-2 md:hidden">
+          {t.nav.menus.map((menu) => (
+            <div key={menu.key} className="border-b border-line">
+              <button
+                type="button"
+                className={`flex w-full items-center justify-between py-4 text-base font-medium ${
+                  isMenuActive(menu.key) ? "text-text" : "text-text/90"
+                }`}
+                aria-expanded={openMenu === menu.key}
+                onClick={() =>
+                  setOpenMenu((k) => (k === menu.key ? null : menu.key))
+                }
+              >
+                {menu.label}
+                <Chevron
+                  className={`h-1.5 w-2.5 transition-transform ${
+                    openMenu === menu.key ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              {openMenu === menu.key && (
+                <div className="pb-3">
+                  {menu.items.map((item) => (
+                    <Link
+                      key={item.path}
+                      href={href(lang, item.path)}
+                      onClick={() => setOpen(false)}
+                      className={`block py-2.5 pl-4 text-sm ${
+                        pathname === href(lang, item.path)
+                          ? "text-text"
+                          : "text-muted"
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
+
+          {t.nav.links.map((link) => (
+            <Link
+              key={link.path}
+              href={href(lang, link.path)}
+              onClick={() => setOpen(false)}
+              className="block border-b border-line py-4 text-base font-medium text-text/90"
+            >
+              {link.label}
+            </Link>
+          ))}
+
           <LangSwitch lang={lang} className="border-b border-line py-4" />
           <Link
             href={href(lang, "/contact")}
@@ -99,46 +201,5 @@ export default function Header({ lang }: { lang: Lang }) {
         </nav>
       )}
     </header>
-  );
-}
-
-function NavLink({ lang, path, label }: { lang: Lang; path: string; label: string }) {
-  const pathname = usePathname();
-  const target = href(lang, path);
-  return (
-    <Link
-      href={target}
-      className={`text-sm font-medium transition-colors hover:text-text ${
-        pathname === target ? "text-accent" : "text-muted"
-      }`}
-    >
-      {label}
-    </Link>
-  );
-}
-
-function MobileNavLink({
-  lang,
-  path,
-  label,
-  onClick,
-}: {
-  lang: Lang;
-  path: string;
-  label: string;
-  onClick: () => void;
-}) {
-  const pathname = usePathname();
-  const target = href(lang, path);
-  return (
-    <Link
-      href={target}
-      onClick={onClick}
-      className={`block border-b border-line py-4 text-base font-medium ${
-        pathname === target ? "text-accent" : "text-text"
-      }`}
-    >
-      {label}
-    </Link>
   );
 }
