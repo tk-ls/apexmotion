@@ -106,7 +106,7 @@ export default function CinemaSection({
           style={{
             transform: `scale(${scale})`,
             filter: `brightness(${brightness})`,
-            boxShadow: `0 0 ${90 * dim}px rgba(255, 90, 0, ${0.18 * dim})`,
+            boxShadow: `0 0 ${90 * dim}px rgba(255, 255, 255, ${0.1 * dim})`,
           }}
         >
           {/* Video is slightly oversized (~10px) so the frame crops its

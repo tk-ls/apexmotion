@@ -1,23 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --background: #141311;
-  --foreground: #f2f0ed;
+  --background: #121212;
+  --foreground: #f2f2f2;
   color-scheme: dark;
 }
 
 @theme inline {
-  /* Dark cinematic-studio palette: warm charcoal + Leuchtorange (RAL 2005-ish).
-     Portal structure (cards, rounded, friendly) kept from the light version —
-     only the values flipped. Swap --color-accent to rebrand. */
-  --color-bg: #141311;
-  --color-surface: #1c1a17;
-  --color-card: #1e1c19;
-  --color-line: #2c2925;
-  --color-text: #f2f0ed;
-  --color-muted: #a3a09b;
-  --color-accent: #ff5a00;
-  --color-accent-hover: #ff7526;
+  /* Monochrome cinematic-studio palette: near-black + white, no colour.
+     Portal structure (cards, rounded, friendly) unchanged. "Accent" is
+     white — swap --color-accent/-hover to reintroduce a brand colour. */
+  --color-bg: #121212;
+  --color-surface: #1a1a1a;
+  --color-card: #1d1d1d;
+  --color-line: #2b2b2b;
+  --color-text: #f2f2f2;
+  --color-muted: #9e9e9e;
+  --color-accent: #f2f2f2;
+  --color-accent-hover: #ffffff;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -66,7 +66,7 @@ body {
     @apply inline-flex items-center justify-center gap-2 rounded-lg border border-accent px-6 py-3.5 text-sm font-semibold text-accent transition-colors hover:bg-accent/10;
   }
   .eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[0.12em] text-accent;
+    @apply text-xs font-semibold uppercase tracking-[0.12em] text-muted;
   }
   .card {
     @apply rounded-xl border border-line bg-card;

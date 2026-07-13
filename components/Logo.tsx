@@ -8,7 +8,7 @@ export default function Logo({ lang = "en" }: { lang?: Lang }) {
       <span className="text-lg font-extrabold tracking-tight text-text">
         {primary}
       </span>
-      <span className="text-[0.65rem] font-bold uppercase tracking-[0.15em] text-accent">
+      <span className="text-[0.65rem] font-bold uppercase tracking-[0.15em] text-muted">
         {secondary}
       </span>
     </span>
