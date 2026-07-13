@@ -109,9 +109,9 @@ export default function CinemaSection({
             boxShadow: `0 0 ${90 * dim}px rgba(255, 90, 0, ${0.18 * dim})`,
           }}
         >
+          {/* Video is slightly oversized (~10px) so the frame crops its
+              edges — hides browser video-layer edge artifacts */}
           {videoOk ? (
-            {/* Slightly oversized (~10px) so the frame crops the video's
-                edges — hides browser video-layer edge artifacts */}
             <video
               ref={videoRef}
               className="block aspect-video w-full scale-[1.01] bg-black object-cover"
