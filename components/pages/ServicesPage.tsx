@@ -1,5 +1,4 @@
 import Link from "next/link";
-import TrustBand from "@/components/TrustBand";
 import { dictionaries, href, type Lang } from "@/lib/i18n";
 
 export default function ServicesPage({ lang }: { lang: Lang }) {
@@ -66,10 +65,8 @@ export default function ServicesPage({ lang }: { lang: Lang }) {
         </p>
       </div>
 
-      <TrustBand lang={lang} />
-
       {/* Process */}
-      <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+      <div className="mx-auto max-w-6xl px-4 pb-20 sm:px-6">
         <p className="eyebrow">{t.processEyebrow}</p>
         <h2 className="mt-3 text-3xl font-bold tracking-tight text-text sm:text-4xl">
           {t.processHeading}

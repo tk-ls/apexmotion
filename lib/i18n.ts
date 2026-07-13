@@ -66,6 +66,7 @@ const en = {
     showreelSub: "Muted autoplay · replace with Vimeo Pro or Mux embed",
     cinemaEyebrow: "The screening room",
     cinemaCaption: "Lights down. Sound on.",
+    cinemaHint: "Keep scrolling",
     aboutEyebrow: "The Studio",
     aboutHeading: "Immersive visual storytelling that moves buyers — and markets.",
     aboutP1:
@@ -88,7 +89,7 @@ const en = {
       {
         index: "02",
         title: "The Immersive Tour",
-        body: "Our signature one-take indoor FPV flight — a single, seamless journey through the property that reveals flow, scale and light.",
+        body: "Our signature flight: one seamless take through the whole property, and the centrepiece of a campaign.",
         featured: true,
       },
       {
@@ -139,7 +140,6 @@ const en = {
           "High-end gimbal photography",
           "Edited highlight photo set",
           "Colour-graded 60-second exterior film",
-          "Delivery within 3 business days",
         ],
       },
       {
@@ -153,7 +153,6 @@ const en = {
           "Agent-branded final edit",
           "Vertical cuts for Instagram & TikTok",
           "Licensed soundtrack & sound design",
-          "Delivery within 3 business days",
         ],
       },
       {
@@ -200,7 +199,7 @@ const en = {
     p1em: "move through a home",
     p1b: " — feeling its flow, its scale and its light before they ever step inside.",
     p2: "We operate as a dedicated two-person crew on every shoot. Our registered operator and safety officer oversees flight planning, risk assessment and compliance, while our pilot focuses entirely on the craft — threading a single, seamless flight path through a property that would take a conventional videographer a full day of cuts to approximate.",
-    p3: "That structure is deliberate. It means agents and vendors get a professional production partner on-site: insured, CASA-compliant and accountable — with the cinematic instincts of a film crew and the reliability of an established supplier.",
+    p3: "That structure is deliberate. It means agents and vendors get a true production partner on-site — the cinematic instincts of a film crew, backed by the reliability of an established supplier.",
     credentialsHeading: "Credentials",
     credentials: [
       "CASA-registered operator on every shoot",
@@ -363,6 +362,7 @@ const zh: Dict = {
     "showreelSub": "静音自动播放 · 替换为 Vimeo Pro 或 Mux 嵌入",
     "cinemaEyebrow": "放映厅",
     "cinemaCaption": "灯光暗下，请开声音。",
+    "cinemaHint": "继续下滑",
     "aboutEyebrow": "工作室",
     "aboutHeading": "沉浸式影像，先打动买家，再打动市场。",
     "aboutP1": "一鸣惊人传媒（Apex Motion Studios）是悉尼一家高端房产影像工作室。我们的招牌是一镜到底 FPV 导览：一次流畅的飞行，带买家穿过整套房源，动线、尺度与光影一路展开。这样的临场感，静态照片给不了。",
@@ -383,7 +383,7 @@ const zh: Dict = {
       {
         "index": "02",
         "title": "沉浸导览",
-        "body": "我们的招牌：一镜到底室内 FPV 导览。一趟飞行走完整套房源，动线、尺度与光影，一并交代清楚。",
+        "body": "我们的招牌：一趟室内飞行走完整套房源，是整场营销的主角。",
         "featured": true
       },
       {
@@ -450,8 +450,7 @@ const zh: Dict = {
           "电影级外景航拍",
           "地面稳定器摄影",
           "精修房源照片集",
-          "60 秒外景调色成片",
-          "3 个工作日内交付"
+          "60 秒外景调色成片"
         ]
       },
       {
@@ -464,8 +463,7 @@ const zh: Dict = {
           "一镜到底室内 FPV 导览",
           "中介品牌定制成片",
           "Instagram 与 TikTok 竖版剪辑",
-          "正版配乐与声音设计",
-          "3 个工作日内交付"
+          "正版配乐与声音设计"
         ]
       },
       {
@@ -512,7 +510,7 @@ const zh: Dict = {
     "p1em": "走进一个家",
     "p1b": "——动线、尺度与光影，人还没进门，心里已经有数。",
     "p2": "每次拍摄，到场的都是专职双人团队。注册运营人兼安全官统筹航线规划、风险评估与合规，飞手只专注一件事——创作。一条流畅的飞行路线穿越整套房源，换作传统摄像师，剪上一整天也只能接近这个效果。",
-    "p3": "这样的架构是刻意为之。中介和业主请到现场的，是一个专业的制作伙伴：有全额公众责任险，符合 CASA 规范，责任归属清楚。论创作，有电影团队的直觉；论交付，有成熟供应商的可靠。",
+    "p3": "这样的架构是刻意为之。中介和业主请到现场的，是一个专业的制作伙伴——论创作，有电影团队的直觉；论交付，有成熟供应商的可靠。",
     "credentialsHeading": "资质与保障",
     "credentials": [
       "每次拍摄均有 CASA 注册运营人在场",

@@ -29,9 +29,11 @@ function useReducedMotion() {
 export default function CinemaSection({
   eyebrow,
   caption,
+  hint,
 }: {
   eyebrow: string;
   caption: string;
+  hint: string;
 }) {
   const wrapRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -54,7 +56,9 @@ export default function CinemaSection({
 
         const v = videoRef.current;
         if (!v) return;
-        const shouldPlay = p > 0.12 && p < 0.98;
+        // Only roll the film once the screen is essentially at full
+        // brightness — nobody should watch a dark video.
+        const shouldPlay = p >= 0.32 && p < 0.985;
         if (shouldPlay && !isPlaying.current) {
           isPlaying.current = true;
           v.play().catch(() => {});
@@ -75,12 +79,13 @@ export default function CinemaSection({
     };
   }, []);
 
-  // Room lights: fully lit at the top of the section, black by 40% scroll.
-  const dim = Math.min(1, progress / 0.4);
-  // Screen: eases up from 92% scale and 40% brightness as the lights go down.
-  const rise = Math.min(1, progress / 0.5);
-  const scale = reducedMotion ? 1 : 0.92 + 0.08 * rise;
-  const brightness = 0.4 + 0.6 * rise;
+  // Lights out and screen fully bright by 35% scroll, then a long plateau —
+  // most of the section's runway shows the film at full brightness, so
+  // there's no exact spot to hunt for.
+  const dim = Math.min(1, progress / 0.35);
+  const scale = reducedMotion ? 1 : 0.92 + 0.08 * dim;
+  const brightness = 0.4 + 0.6 * dim;
+  const hintVisible = videoOk && progress < 0.32;
   // Interpolate the room from page charcoal (#141311) to pure black.
   const room = `rgb(${Math.round(20 * (1 - dim))}, ${Math.round(19 * (1 - dim))}, ${Math.round(17 * (1 - dim))})`;
 
@@ -95,7 +100,7 @@ export default function CinemaSection({
         </p>
 
         <div
-          className="w-[min(92vw,64rem)] overflow-hidden rounded-xl bg-black ring-1 ring-white/10"
+          className="relative w-[min(92vw,64rem)] overflow-hidden rounded-xl bg-black ring-1 ring-white/10"
           style={{
             transform: `scale(${scale})`,
             filter: `brightness(${brightness})`,
@@ -123,6 +128,20 @@ export default function CinemaSection({
               </span>
             </div>
           )}
+
+          {/* "Keep scrolling" watermark — visible until the lights are out */}
+          <div
+            className="pointer-events-none absolute inset-0 flex items-end justify-center pb-6 transition-opacity duration-500"
+            style={{ opacity: hintVisible ? 1 : 0 }}
+            aria-hidden={!hintVisible}
+          >
+            <span className="flex items-center gap-2 rounded-full bg-black/60 px-4 py-2 text-xs font-semibold text-white backdrop-blur">
+              {hint}
+              <span className="animate-bounce" aria-hidden>
+                ↓
+              </span>
+            </span>
+          </div>
         </div>
 
         <p

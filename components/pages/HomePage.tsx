@@ -37,7 +37,11 @@ export default function HomePage({ lang }: { lang: Lang }) {
       </section>
 
       {/* Screening room — pins full-screen, lights dim, showreel plays */}
-      <CinemaSection eyebrow={t.cinemaEyebrow} caption={t.cinemaCaption} />
+      <CinemaSection
+        eyebrow={t.cinemaEyebrow}
+        caption={t.cinemaCaption}
+        hint={t.cinemaHint}
+      />
 
       {/* About / value proposition — one paragraph; depth lives on /about */}
       <section className="bg-surface">
