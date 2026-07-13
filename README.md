@@ -30,15 +30,17 @@ VideoPlaceholder). Design tokens (colours, fonts) are defined in
 
 ## Before launch — TODO
 
-- [ ] Replace all `VideoPlaceholder` components with real video embeds
-      (Vimeo Pro or Mux recommended — see comments in
-      `components/VideoPlaceholder.tsx`)
-- [ ] Replace sample portfolio projects in `app/portfolio/page.tsx` with real
-      shoots
-- [ ] Wire the contact form to a backend (Formspree or a route handler +
-      Resend — see comment in `app/contact/page.tsx`)
-- [ ] Replace placeholder phone/email in `components/Footer.tsx` and
-      `app/contact/page.tsx`
+- [ ] Replace the stock placeholder clips in `public/videos/` (all from
+      Mixkit, free license) with real shoots — they're badged "Sample
+      project" on the site; move to Vimeo Pro/Mux/R2 hosting once real
+      showreels exist
+- [ ] Activate the contact form: it POSTs to formsubmit.co →
+      hi@apexmotion.com.au; the first submission triggers an activation
+      email — click the link once the domain's catch-all is live
+- [ ] Point `SITE_URL` in `components/pages/ContactPage.tsx` at the custom
+      domain when it replaces apexmotion.pages.dev
 - [ ] Add ABN to the footer
-- [ ] Register domain and deploy (Vercel is the simplest for Next.js)
+- [ ] Fix Cloudflare Pages git-build settings (build command `npm run build`,
+      output dir `out`) — until then, deploy with
+      `npm run build && npx wrangler pages deploy out --project-name apexmotion`
 - [ ] Add a favicon/logo to replace the default `app/favicon.ico`

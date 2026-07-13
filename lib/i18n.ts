@@ -236,6 +236,10 @@ const en = {
     message: "Anything else we should know?",
     submit: "Check Availability",
     talkHeading: "Prefer to talk?",
+    thanksTitle: "Enquiry sent.",
+    thanksBody:
+      "We'll come back with availability and a tailored quote within one business day.",
+    thanksBack: "Back to home",
     areaHeading: "Service area",
     areaBody:
       "Greater Sydney — from the Eastern Suburbs and Lower North Shore to the Northern Beaches, Inner West and Hills District. Regional NSW by arrangement.",
@@ -546,6 +550,9 @@ const zh: Dict = {
     "message": "补充说明",
     "submit": "查询档期",
     "talkHeading": "更愿意直接聊？",
+    "thanksTitle": "已收到您的询价。",
+    "thanksBody": "我们将在一个工作日内回复档期与专属报价。",
+    "thanksBack": "返回首页",
     "areaHeading": "服务范围",
     "areaBody": "服务覆盖大悉尼：东区、下北岸、北部海滩、内西区与山区（Hills District）。新州其他地区可另行安排。"
   },

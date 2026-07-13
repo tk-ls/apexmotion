@@ -1,5 +1,7 @@
 import { clauses } from "@/lib/clauses";
-import { dictionaries, type Lang } from "@/lib/i18n";
+import { dictionaries, href, type Lang } from "@/lib/i18n";
+
+const SITE_URL = "https://apexmotion.pages.dev"; // TODO: update on custom domain
 
 const inputClasses =
   "w-full rounded-lg border border-line bg-bg px-4 py-3 text-sm text-text placeholder:text-muted/60 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent";
@@ -17,15 +19,37 @@ export default function ContactPage({ lang }: { lang: Lang }) {
 
       <div className="mt-12 grid gap-10 lg:grid-cols-[2fr_1fr]">
         {/*
-          TODO before launch: wire this form to a backend.
-          Easiest options: Formspree (set action="https://formspree.io/f/YOUR_FORM_ID"
-          and method="POST") or a Next.js route handler + email service (Resend).
+          Form delivery via formsubmit.co — no account needed. The FIRST
+          submission triggers an activation email to hi@apexmotion.com.au;
+          click the link in it once the domain's catch-all is live, and every
+          subsequent submission lands in the inbox.
         */}
         <form
           className="card grid gap-5 p-8 sm:grid-cols-2"
-          action="#"
+          action="https://formsubmit.co/hi@apexmotion.com.au"
           method="POST"
         >
+          <input
+            type="hidden"
+            name="_subject"
+            value="New availability enquiry — Apex Motion Studios"
+          />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input
+            type="hidden"
+            name="_next"
+            value={`${SITE_URL}${href(lang, "/thanks")}`}
+          />
+          {/* Honeypot — bots fill it, humans never see it */}
+          <input
+            type="text"
+            name="_honey"
+            tabIndex={-1}
+            autoComplete="off"
+            className="hidden"
+            aria-hidden="true"
+          />
           <div>
             <label
               htmlFor="name"
@@ -154,19 +178,18 @@ export default function ContactPage({ lang }: { lang: Lang }) {
         <aside className="space-y-6">
           <div className="card p-7">
             <h2 className="font-bold text-text">{t.talkHeading}</h2>
-            {/* TODO: Replace placeholder contact details before launch */}
             <ul className="mt-4 space-y-2 text-sm text-muted">
               <li>
                 <a
-                  href="mailto:hello@apexmotionstudios.com.au"
+                  href="mailto:hi@apexmotion.com.au"
                   className="hover:text-accent"
                 >
-                  hello@apexmotionstudios.com.au
+                  hi@apexmotion.com.au
                 </a>
               </li>
               <li>
-                <a href="tel:+61400000000" className="hover:text-accent">
-                  0400 000 000
+                <a href="tel:+61405521118" className="hover:text-accent">
+                  0405 521 118
                 </a>
               </li>
             </ul>

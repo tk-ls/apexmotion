@@ -1,8 +1,8 @@
 import Link from "next/link";
+import AutoVideo from "@/components/AutoVideo";
 import CinemaSection from "@/components/CinemaSection";
 import Reveal from "@/components/Reveal";
 import TrustBand from "@/components/TrustBand";
-import VideoPlaceholder from "@/components/VideoPlaceholder";
 import { clauses } from "@/lib/clauses";
 import { dictionaries, href, type Lang } from "@/lib/i18n";
 
@@ -62,7 +62,16 @@ export default function HomePage({ lang }: { lang: Lang }) {
                   {t.aboutLink} →
                 </Link>
               </div>
-              <VideoPlaceholder label={t.featureLabel} sublabel={t.featureSub} />
+              <div className="relative overflow-hidden rounded-xl bg-black">
+                {/* Replace with a real one-take FPV example at launch */}
+                <AutoVideo
+                  src="/videos/feature-street-tour.mp4"
+                  className="block aspect-video w-full object-cover"
+                />
+                <span className="absolute right-3 top-3 rounded-full bg-black/60 px-2.5 py-1 text-[0.65rem] font-medium text-white backdrop-blur">
+                  {dictionaries[lang].portfolio.sampleNote}
+                </span>
+              </div>
             </div>
           </Reveal>
         </div>

@@ -1,12 +1,30 @@
 import Link from "next/link";
-import VideoPlaceholder from "@/components/VideoPlaceholder";
+import AutoVideo from "@/components/AutoVideo";
 import { clauses } from "@/lib/clauses";
 import { dictionaries, href, type Lang } from "@/lib/i18n";
 
 /**
- * Projects are SAMPLE content — replace with real shoots before launch.
- * Keep the grid curated: 6–9 of your strongest projects only.
+ * Projects are SAMPLE content (stock clips, clearly badged) — replace with
+ * real shoots before launch. Keep the grid curated: 6–9 strongest projects.
+ * Order matches the projects array in lib/i18n.ts.
  */
+const FEATURED_VIDEO = "/videos/featured-aerial-estate.mp4";
+const TILE_VIDEOS = [
+  "/videos/showreel-placeholder.mp4", // Mosman — waterfront home
+  "/videos/tile-apartments.mp4", // Barangaroo — apartments
+  "/videos/tile-country-estate.mp4", // Vaucluse — estate & grounds
+  "/videos/tile-city-buildings.mp4", // Surry Hills — urban
+  "/videos/tile-bay.mp4", // Palm Beach — bay
+  "/videos/tile-suburbs.mp4", // Kellyville — suburbs
+];
+
+function SampleBadge({ label }: { label: string }) {
+  return (
+    <span className="absolute right-3 top-3 rounded-full bg-black/60 px-2.5 py-1 text-[0.65rem] font-medium text-white backdrop-blur">
+      {label}
+    </span>
+  );
+}
 export default function PortfolioPage({ lang }: { lang: Lang }) {
   const t = dictionaries[lang].portfolio;
 
@@ -18,27 +36,28 @@ export default function PortfolioPage({ lang }: { lang: Lang }) {
       </h1>
       <p className="mt-5 max-w-2xl text-muted">{t.sub}</p>
 
-      {/* Featured film — your single strongest one-take tour */}
-      <div className="mt-12">
-        <VideoPlaceholder
-          label={t.featuredLabel}
-          sublabel={t.featuredSub}
-          aspect="aspect-video sm:aspect-[21/9]"
+      {/* Featured film — replace with your single strongest one-take tour */}
+      <div className="relative mt-12 overflow-hidden rounded-xl bg-black">
+        <AutoVideo
+          src={FEATURED_VIDEO}
+          className="block aspect-video w-full object-cover sm:aspect-[21/9]"
         />
+        <SampleBadge label={t.sampleNote} />
       </div>
 
       {/* Project grid — listing-style cards */}
       <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {t.projects.map((project) => (
+        {t.projects.map((project, i) => (
           <article
             key={`${project.suburb}-${project.type}`}
             className="card overflow-hidden"
           >
-            <div className="[&>div]:rounded-none">
-              <VideoPlaceholder
-                label={`${project.suburb} — ${project.type}`}
-                sublabel={t.sampleNote}
+            <div className="relative">
+              <AutoVideo
+                src={TILE_VIDEOS[i % TILE_VIDEOS.length]}
+                className="block aspect-video w-full object-cover"
               />
+              <SampleBadge label={t.sampleNote} />
             </div>
             <div className="p-5">
               <h2 className="text-lg font-bold text-text">{project.suburb}</h2>

@@ -51,19 +51,18 @@ export default function Footer({ lang }: { lang: Lang }) {
 
           <div className="text-sm">
             <p className="mb-4 font-semibold text-text">{t.contact}</p>
-            {/* TODO: Replace placeholder contact details before launch */}
             <ul className="space-y-2 text-muted">
               <li>
                 <a
-                  href="mailto:hello@apexmotionstudios.com.au"
+                  href="mailto:hi@apexmotion.com.au"
                   className="hover:text-accent"
                 >
-                  hello@apexmotionstudios.com.au
+                  hi@apexmotion.com.au
                 </a>
               </li>
               <li>
-                <a href="tel:+61400000000" className="hover:text-accent">
-                  0400 000 000
+                <a href="tel:+61405521118" className="hover:text-accent">
+                  0405 521 118
                 </a>
               </li>
               <li>{t.servicing}</li>
