@@ -1,6 +1,22 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+
+const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)";
+
+function subscribeReducedMotion(callback: () => void) {
+  const mql = window.matchMedia(REDUCED_MOTION_QUERY);
+  mql.addEventListener("change", callback);
+  return () => mql.removeEventListener("change", callback);
+}
+
+function useReducedMotion() {
+  return useSyncExternalStore(
+    subscribeReducedMotion,
+    () => window.matchMedia(REDUCED_MOTION_QUERY).matches,
+    () => false,
+  );
+}
 
 /**
  * Full-screen "screening room": the section pins while you scroll through it,
@@ -20,15 +36,11 @@ export default function CinemaSection({
   const wrapRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const isPlaying = useRef(false);
-  const reducedMotion = useRef(false);
+  const reducedMotion = useReducedMotion();
   const [progress, setProgress] = useState(0);
   const [videoOk, setVideoOk] = useState(true);
 
   useEffect(() => {
-    reducedMotion.current = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-
     let raf = 0;
     const onScroll = () => {
       cancelAnimationFrame(raf);
@@ -67,7 +79,7 @@ export default function CinemaSection({
   const dim = Math.min(1, progress / 0.4);
   // Screen: eases up from 92% scale and 40% brightness as the lights go down.
   const rise = Math.min(1, progress / 0.5);
-  const scale = reducedMotion.current ? 1 : 0.92 + 0.08 * rise;
+  const scale = reducedMotion ? 1 : 0.92 + 0.08 * rise;
   const brightness = 0.4 + 0.6 * rise;
   // Interpolate the room from page charcoal (#141311) to pure black.
   const room = `rgb(${Math.round(20 * (1 - dim))}, ${Math.round(19 * (1 - dim))}, ${Math.round(17 * (1 - dim))})`;
