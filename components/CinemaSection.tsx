@@ -19,8 +19,11 @@ function useReducedMotion() {
 }
 
 /**
- * Full-screen "screening room": the section pins while you scroll through it,
- * the room lights dim to black, and the screen brightens and starts playing.
+ * "Screening room": the screen block is position-sticky inside a tall black
+ * section. It enters at the top of the section (immediately visible, even on
+ * phones where the screen is much shorter than the viewport), rides up until
+ * it is centred, pins there while the room scrolls past and the lights dim,
+ * then un-pins and leaves with the bottom of the section.
  *
  * The placeholder clip lives at /public/videos/showreel-placeholder.mp4
  * (Mixkit free license). Swap the file for the real showreel when it exists —
@@ -36,15 +39,17 @@ export default function CinemaSection({
   hint: string;
 }) {
   const wrapRef = useRef<HTMLElement>(null);
+  const stickyRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const isPlaying = useRef(false);
   const reducedMotion = useReducedMotion();
   const [progress, setProgress] = useState(0);
+  const [topOffset, setTopOffset] = useState(0);
   const [videoOk, setVideoOk] = useState(true);
 
   useEffect(() => {
     let raf = 0;
-    const onScroll = () => {
+    const update = () => {
       cancelAnimationFrame(raf);
       raf = requestAnimationFrame(() => {
         const el = wrapRef.current;
@@ -53,6 +58,14 @@ export default function CinemaSection({
         const runway = rect.height - window.innerHeight;
         const p = Math.min(1, Math.max(0, -rect.top / (runway || 1)));
         setProgress(p);
+
+        // Sticky offset that centres the screen block in the viewport
+        const block = stickyRef.current;
+        if (block) {
+          setTopOffset(
+            Math.max(16, (window.innerHeight - block.offsetHeight) / 2),
+          );
+        }
 
         const v = videoRef.current;
         if (!v) return;
@@ -69,12 +82,12 @@ export default function CinemaSection({
       });
     };
 
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
     return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
       cancelAnimationFrame(raf);
     };
   }, []);
@@ -86,14 +99,19 @@ export default function CinemaSection({
   const scale = reducedMotion ? 1 : 0.92 + 0.08 * dim;
   const brightness = 0.4 + 0.6 * dim;
   const hintVisible = videoOk && progress < 0.32;
-  // Interpolate the room from page charcoal (#141311) to pure black.
-  const room = `rgb(${Math.round(20 * (1 - dim))}, ${Math.round(19 * (1 - dim))}, ${Math.round(17 * (1 - dim))})`;
+  // Interpolate the room from page charcoal (#121212) to pure black.
+  const room = `rgb(${Math.round(18 * (1 - dim))}, ${Math.round(18 * (1 - dim))}, ${Math.round(18 * (1 - dim))})`;
 
   return (
-    <section ref={wrapRef} className="relative h-[220vh]">
+    <section
+      ref={wrapRef}
+      className="relative h-[220vh]"
+      style={{ backgroundColor: room }}
+    >
       <div
-        className="sticky top-0 flex h-screen flex-col items-center justify-center gap-6 overflow-hidden px-4"
-        style={{ backgroundColor: room }}
+        ref={stickyRef}
+        className="sticky flex flex-col items-center gap-6 px-4 py-6"
+        style={{ top: topOffset }}
       >
         <p className="eyebrow" style={{ opacity: 1 - dim * 0.6 }}>
           {eyebrow}
