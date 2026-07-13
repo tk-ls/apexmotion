@@ -35,7 +35,7 @@ VideoPlaceholder). Design tokens (colours, fonts) are defined in
       project" on the site; move to Vimeo Pro/Mux/R2 hosting once real
       showreels exist
 - [ ] Activate the contact form: it POSTs to formsubmit.co →
-      hi@apexmotion.com.au; the first submission triggers an activation
+      apexmotion@wlmail.xyz; the first submission triggers an activation
       email — click the link once the domain's catch-all is live
 - [ ] Point `SITE_URL` in `components/pages/ContactPage.tsx` at the custom
       domain when it replaces apexmotion.pages.dev

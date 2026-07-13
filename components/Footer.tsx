@@ -54,10 +54,10 @@ export default function Footer({ lang }: { lang: Lang }) {
             <ul className="space-y-2 text-muted">
               <li>
                 <a
-                  href="mailto:hi@apexmotion.com.au"
+                  href="mailto:apexmotion@wlmail.xyz"
                   className="hover:text-accent"
                 >
-                  hi@apexmotion.com.au
+                  apexmotion@wlmail.xyz
                 </a>
               </li>
               <li>

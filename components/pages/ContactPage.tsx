@@ -20,13 +20,13 @@ export default function ContactPage({ lang }: { lang: Lang }) {
       <div className="mt-12 grid gap-10 lg:grid-cols-[2fr_1fr]">
         {/*
           Form delivery via formsubmit.co — no account needed. The FIRST
-          submission triggers an activation email to hi@apexmotion.com.au;
+          submission triggers an activation email to apexmotion@wlmail.xyz;
           click the link in it once the domain's catch-all is live, and every
           subsequent submission lands in the inbox.
         */}
         <form
           className="card grid gap-5 p-8 sm:grid-cols-2"
-          action="https://formsubmit.co/hi@apexmotion.com.au"
+          action="https://formsubmit.co/apexmotion@wlmail.xyz"
           method="POST"
         >
           <input
@@ -181,10 +181,10 @@ export default function ContactPage({ lang }: { lang: Lang }) {
             <ul className="mt-4 space-y-2 text-sm text-muted">
               <li>
                 <a
-                  href="mailto:hi@apexmotion.com.au"
+                  href="mailto:apexmotion@wlmail.xyz"
                   className="hover:text-accent"
                 >
-                  hi@apexmotion.com.au
+                  apexmotion@wlmail.xyz
                 </a>
               </li>
               <li>
