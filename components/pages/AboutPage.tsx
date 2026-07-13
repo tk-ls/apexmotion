@@ -1,5 +1,4 @@
 import Link from "next/link";
-import TrustBand from "@/components/TrustBand";
 import { dictionaries, href, type Lang } from "@/lib/i18n";
 
 export default function AboutPage({ lang }: { lang: Lang }) {
@@ -9,7 +8,7 @@ export default function AboutPage({ lang }: { lang: Lang }) {
     <>
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <p className="eyebrow">{t.eyebrow}</p>
-        <h1 className="mt-4 max-w-3xl text-4xl font-extrabold leading-tight tracking-tight text-text sm:text-5xl">
+        <h1 className="mt-4 max-w-4xl text-4xl font-extrabold leading-tight tracking-tight text-text sm:text-5xl">
           {t.h1}
         </h1>
 
@@ -24,37 +23,26 @@ export default function AboutPage({ lang }: { lang: Lang }) {
             <p>{t.p3}</p>
           </div>
 
-          <div className="space-y-6">
-            <div className="card p-7">
-              <h2 className="font-bold text-text">{t.credentialsHeading}</h2>
-              <ul className="mt-4 space-y-3 text-sm text-text">
-                {t.credentials.map((item) => (
-                  <li key={item} className="flex gap-3">
-                    <span
-                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/10 text-xs text-accent"
-                      aria-hidden
-                    >
-                      ✓
-                    </span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="card p-7">
-              <h2 className="font-bold text-text">{t.everyShootHeading}</h2>
-              <p className="mt-4 text-sm leading-relaxed text-muted">
-                {t.everyShootBody}
-              </p>
-            </div>
+          <div className="card h-fit p-7">
+            <h2 className="font-bold text-text">{t.credentialsHeading}</h2>
+            <ul className="mt-4 space-y-3 text-sm text-text">
+              {t.credentials.map((item) => (
+                <li key={item} className="flex gap-3">
+                  <span
+                    className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/10 text-xs text-accent"
+                    aria-hidden
+                  >
+                    ✓
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
 
-      <TrustBand lang={lang} />
-
-      <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+      <div className="mx-auto max-w-6xl px-4 pb-20 sm:px-6">
         <div className="card flex flex-col items-start gap-6 p-10 sm:flex-row sm:items-center sm:justify-between">
           <h2 className="max-w-xl text-2xl font-bold tracking-tight text-text sm:text-3xl">
             {t.closingHeading}

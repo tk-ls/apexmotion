@@ -9,10 +9,10 @@ export default function ServicesPage({ lang }: { lang: Lang }) {
     <>
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <p className="eyebrow">{t.eyebrow}</p>
-        <h1 className="mt-4 max-w-3xl text-4xl font-extrabold leading-tight tracking-tight text-text sm:text-5xl">
+        <h1 className="mt-4 max-w-4xl text-4xl font-extrabold leading-tight tracking-tight text-text sm:text-5xl">
           {t.h1}
         </h1>
-        <p className="mt-5 max-w-xl text-muted">{t.sub}</p>
+        <p className="mt-5 max-w-2xl text-muted">{t.sub}</p>
 
         <div className="mt-12 grid items-start gap-6 lg:grid-cols-3">
           {t.packages.map((pkg) => (

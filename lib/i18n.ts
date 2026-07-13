@@ -64,6 +64,8 @@ const en = {
     ctaSecondary: "Watch Our Work",
     showreelLabel: "Showreel — your best 15-second FPV clip",
     showreelSub: "Muted autoplay · replace with Vimeo Pro or Mux embed",
+    cinemaEyebrow: "The screening room",
+    cinemaCaption: "Lights down. Sound on.",
     aboutEyebrow: "The Studio",
     aboutHeading: "Immersive visual storytelling that moves buyers — and markets.",
     aboutP1:
@@ -359,6 +361,8 @@ const zh: Dict = {
     "ctaSecondary": "观看作品",
     "showreelLabel": "精选集锦——放您最出彩的 15 秒 FPV 镜头",
     "showreelSub": "静音自动播放 · 替换为 Vimeo Pro 或 Mux 嵌入",
+    "cinemaEyebrow": "放映厅",
+    "cinemaCaption": "灯光暗下，请开声音。",
     "aboutEyebrow": "工作室",
     "aboutHeading": "沉浸式影像，先打动买家，再打动市场。",
     "aboutP1": "一鸣惊人传媒（Apex Motion Studios）是悉尼一家高端房产影像工作室。我们的招牌是一镜到底 FPV 导览：一次流畅的飞行，带买家穿过整套房源，动线、尺度与光影一路展开。这样的临场感，静态照片给不了。",

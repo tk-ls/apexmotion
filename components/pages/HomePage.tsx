@@ -1,4 +1,6 @@
 import Link from "next/link";
+import CinemaSection from "@/components/CinemaSection";
+import Reveal from "@/components/Reveal";
 import TrustBand from "@/components/TrustBand";
 import VideoPlaceholder from "@/components/VideoPlaceholder";
 import { dictionaries, href, type Lang } from "@/lib/i18n";
@@ -15,12 +17,12 @@ export default function HomePage({ lang }: { lang: Lang }) {
           className="pointer-events-none absolute -top-32 right-[-10%] h-[480px] w-[640px] rounded-full bg-accent/15 blur-[140px]"
           aria-hidden
         />
-        <div className="relative mx-auto max-w-6xl px-4 pb-16 pt-16 sm:px-6 sm:pt-24">
+        <div className="relative mx-auto max-w-6xl px-4 pb-24 pt-16 sm:px-6 sm:pt-28">
           <p className="eyebrow">{t.eyebrow}</p>
-          <h1 className="mt-4 max-w-3xl text-4xl font-extrabold leading-tight tracking-tight text-text sm:text-6xl">
+          <h1 className="mt-4 max-w-4xl text-4xl font-extrabold leading-tight tracking-tight text-text sm:text-6xl">
             {t.h1}
           </h1>
-          <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">
             {t.sub}
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
@@ -31,38 +33,33 @@ export default function HomePage({ lang }: { lang: Lang }) {
               {t.ctaSecondary}
             </Link>
           </div>
-
-          <div className="mt-14">
-            {/* Hero showreel: muted autoplay, ≤15s, poster image. Replace placeholder with embed. */}
-            <VideoPlaceholder
-              label={t.showreelLabel}
-              sublabel={t.showreelSub}
-              aspect="aspect-video sm:aspect-[21/9]"
-            />
-          </div>
         </div>
       </section>
 
-      {/* About / value proposition */}
+      {/* Screening room — pins full-screen, lights dim, showreel plays */}
+      <CinemaSection eyebrow={t.cinemaEyebrow} caption={t.cinemaCaption} />
+
+      {/* About / value proposition — one paragraph; depth lives on /about */}
       <section className="bg-surface">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-          <div className="grid items-center gap-12 md:grid-cols-2">
-            <div>
-              <p className="eyebrow">{t.aboutEyebrow}</p>
-              <h2 className="mt-3 text-3xl font-bold tracking-tight text-text sm:text-4xl">
-                {t.aboutHeading}
-              </h2>
-              <p className="mt-6 leading-relaxed text-muted">{t.aboutP1}</p>
-              <p className="mt-4 leading-relaxed text-muted">{t.aboutP2}</p>
-              <Link
-                href={href(lang, "/about")}
-                className="mt-6 inline-block text-sm font-semibold text-accent hover:text-accent-hover"
-              >
-                {t.aboutLink} →
-              </Link>
+          <Reveal>
+            <div className="grid items-center gap-12 md:grid-cols-2">
+              <div>
+                <p className="eyebrow">{t.aboutEyebrow}</p>
+                <h2 className="mt-3 text-3xl font-bold tracking-tight text-text sm:text-4xl">
+                  {t.aboutHeading}
+                </h2>
+                <p className="mt-6 leading-relaxed text-muted">{t.aboutP1}</p>
+                <Link
+                  href={href(lang, "/about")}
+                  className="mt-6 inline-block text-sm font-semibold text-accent hover:text-accent-hover"
+                >
+                  {t.aboutLink} →
+                </Link>
+              </div>
+              <VideoPlaceholder label={t.featureLabel} sublabel={t.featureSub} />
             </div>
-            <VideoPlaceholder label={t.featureLabel} sublabel={t.featureSub} />
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -84,21 +81,24 @@ export default function HomePage({ lang }: { lang: Lang }) {
             </Link>
           </div>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {t.services.map((service) => (
-              <div
-                key={service.index}
-                className={`card p-7 ${service.featured ? "ring-2 ring-accent" : ""}`}
-              >
-                {service.featured && (
-                  <span className="mb-3 inline-block rounded-full bg-accent px-3 py-1 text-xs font-semibold text-bg">
-                    {t.mostPopular}
-                  </span>
-                )}
-                <h3 className="text-xl font-bold text-text">{service.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted">
-                  {service.body}
-                </p>
-              </div>
+            {t.services.map((service, i) => (
+              <Reveal key={service.index} delay={i * 120}>
+                <div
+                  className={`card h-full p-7 ${service.featured ? "ring-2 ring-accent" : ""}`}
+                >
+                  {service.featured && (
+                    <span className="mb-3 inline-block rounded-full bg-accent px-3 py-1 text-xs font-semibold text-bg">
+                      {t.mostPopular}
+                    </span>
+                  )}
+                  <h3 className="text-xl font-bold text-text">
+                    {service.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted">
+                    {service.body}
+                  </p>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -109,6 +109,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
       {/* Final CTA */}
       <section>
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+          <Reveal>
           <div className="card flex flex-col items-start gap-6 p-10 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <h2 className="max-w-xl text-2xl font-bold tracking-tight text-text sm:text-3xl">
@@ -120,6 +121,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
               {t.finalCta}
             </Link>
           </div>
+          </Reveal>
         </div>
       </section>
     </>
