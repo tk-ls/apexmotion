@@ -99,10 +99,10 @@ export default function CinemaSection({
           {eyebrow}
         </p>
 
-        {/* border (not ring/box-shadow) + isolate: avoids Safari hairline
-            seams when the frame is scaled and filtered */}
+        {/* No outline on the screen — in a dark room the image floats,
+            like a real cinema. isolate/transform-gpu avoid Safari seams. */}
         <div
-          className="relative isolate w-[min(92vw,64rem)] transform-gpu overflow-hidden rounded-xl border border-white/10 bg-black"
+          className="relative isolate w-[min(92vw,64rem)] transform-gpu overflow-hidden rounded-xl bg-black"
           style={{
             transform: `scale(${scale})`,
             filter: `brightness(${brightness})`,
