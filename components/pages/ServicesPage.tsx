@@ -23,7 +23,7 @@ export default function ServicesPage({ lang }: { lang: Lang }) {
               }`}
             >
               {pkg.featured && (
-                <span className="mb-4 self-start rounded-full bg-accent px-3 py-1 text-xs font-semibold text-white">
+                <span className="mb-4 self-start rounded-full bg-accent px-3 py-1 text-xs font-semibold text-bg">
                   {t.mostPopular}
                 </span>
               )}
@@ -58,7 +58,7 @@ export default function ServicesPage({ lang }: { lang: Lang }) {
           {t.retainerPre}
           <Link
             href={href(lang, "/contact")}
-            className="font-semibold text-accent hover:text-accent-dark"
+            className="font-semibold text-accent hover:text-accent-hover"
           >
             {t.retainerLink}
           </Link>
@@ -77,7 +77,7 @@ export default function ServicesPage({ lang }: { lang: Lang }) {
         <div className="mt-10 grid gap-8 sm:grid-cols-3">
           {t.process.map((item, i) => (
             <div key={item.step}>
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-sm font-bold text-white">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-sm font-bold text-bg">
                 {i + 1}
               </span>
               <h3 className="mt-4 text-xl font-bold text-text">{item.title}</h3>

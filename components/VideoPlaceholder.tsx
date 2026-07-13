@@ -24,7 +24,7 @@ export default function VideoPlaceholder({
 }: VideoPlaceholderProps) {
   return (
     <div
-      className={`relative ${aspect} w-full overflow-hidden rounded-xl bg-[#211f1c]`}
+      className={`relative ${aspect} w-full overflow-hidden rounded-xl bg-[#0c0b0a] ring-1 ring-white/10`}
     >
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 p-6 text-center">
         <span

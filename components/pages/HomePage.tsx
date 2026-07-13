@@ -9,8 +9,13 @@ export default function HomePage({ lang }: { lang: Lang }) {
   return (
     <>
       {/* Hero */}
-      <section>
-        <div className="mx-auto max-w-6xl px-4 pb-16 pt-16 sm:px-6 sm:pt-24">
+      <section className="relative overflow-hidden">
+        {/* Soft Leuchtorange light-leak — the "studio lighting" cue */}
+        <div
+          className="pointer-events-none absolute -top-32 right-[-10%] h-[480px] w-[640px] rounded-full bg-accent/15 blur-[140px]"
+          aria-hidden
+        />
+        <div className="relative mx-auto max-w-6xl px-4 pb-16 pt-16 sm:px-6 sm:pt-24">
           <p className="eyebrow">{t.eyebrow}</p>
           <h1 className="mt-4 max-w-3xl text-4xl font-extrabold leading-tight tracking-tight text-text sm:text-6xl">
             {t.h1}
@@ -51,7 +56,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
               <p className="mt-4 leading-relaxed text-muted">{t.aboutP2}</p>
               <Link
                 href={href(lang, "/about")}
-                className="mt-6 inline-block text-sm font-semibold text-accent hover:text-accent-dark"
+                className="mt-6 inline-block text-sm font-semibold text-accent hover:text-accent-hover"
               >
                 {t.aboutLink} →
               </Link>
@@ -73,7 +78,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
             </div>
             <Link
               href={href(lang, "/services")}
-              className="text-sm font-semibold text-accent hover:text-accent-dark"
+              className="text-sm font-semibold text-accent hover:text-accent-hover"
             >
               {t.servicesLink} →
             </Link>
@@ -85,7 +90,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
                 className={`card p-7 ${service.featured ? "ring-2 ring-accent" : ""}`}
               >
                 {service.featured && (
-                  <span className="mb-3 inline-block rounded-full bg-accent px-3 py-1 text-xs font-semibold text-white">
+                  <span className="mb-3 inline-block rounded-full bg-accent px-3 py-1 text-xs font-semibold text-bg">
                     {t.mostPopular}
                   </span>
                 )}
