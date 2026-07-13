@@ -12,7 +12,7 @@ export default function ServicesPage({ lang }: { lang: Lang }) {
         <h1 className="mt-4 text-4xl font-extrabold leading-tight tracking-tight text-text sm:text-5xl">
           {clauses(t.h1, lang)}
         </h1>
-        <p className="mt-5 max-w-4xl text-muted">{t.sub}</p>
+        <p className="mt-5 text-muted">{t.sub}</p>
 
         <div className="mt-12 grid gap-6 lg:mt-14 lg:grid-cols-3">
           {t.packages.map((pkg) => (

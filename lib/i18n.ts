@@ -42,7 +42,7 @@ const en = {
       {
         index: "01",
         title: "CASA-Registered Operator",
-        body: "Every flight is conducted under our registered operator and dedicated safety officer — no regulatory surprises, no cancelled shoots.",
+        body: "Every flight is conducted under our registered operator and dedicated safety officer, so there are no regulatory surprises and no cancelled shoots.",
       },
       {
         index: "02",
@@ -52,7 +52,7 @@ const en = {
       {
         index: "03",
         title: "A Two-Person Professional Crew",
-        body: "Pilot plus safety officer on every shoot — a production partner your clients can trust on-site at their most valuable asset.",
+        body: "A pilot and a safety officer on every shoot: a production partner your clients can trust on-site at their most valuable asset.",
       },
     ],
   },
@@ -68,11 +68,11 @@ const en = {
     cinemaCaption: "Lights down. Sound on.",
     cinemaHint: "Keep scrolling",
     aboutEyebrow: "The Studio",
-    aboutHeading: "Immersive visual storytelling that moves buyers — and markets.",
+    aboutHeading: "Immersive visual storytelling that moves buyers and markets.",
     aboutP1:
-      "Apex Motion Studios is a Sydney-based production studio specialising in immersive visual storytelling for premium real estate. Our signature one-take FPV tours carry buyers through a property in a single, seamless flight — revealing flow, scale and light in a way static photography never can.",
+      "Apex Motion Studios is a Sydney-based production studio specialising in immersive visual storytelling for premium real estate. Our signature one-take FPV tours carry buyers through a property in a single, seamless flight, revealing flow, scale and light in a way static photography never can.",
     aboutP2:
-      "Paired with cinematic exterior aerials, the result is a listing that commands attention, draws more qualified buyers to inspection, and helps properties sell faster. Every shoot is fully insured and CASA-compliant, delivered by a dedicated two-person crew — so agents get broadcast-quality results with zero operational risk.",
+      "Paired with cinematic exterior aerials, the result is a listing that commands attention, draws more qualified buyers to inspection, and helps properties sell faster. Every shoot is fully insured and CASA-compliant, delivered by a dedicated two-person crew, so agents get broadcast-quality results with zero operational risk.",
     aboutLink: "Meet the studio",
     featureLabel: "One-take FPV tour — feature example",
     featureSub: "Click-to-play · lazy-loaded",
@@ -95,7 +95,7 @@ const en = {
       {
         index: "03",
         title: "The Campaign Suite",
-        body: "The complete marketing package: immersive tour, twilight shoot, lifestyle b-roll and vertical cuts for social — delivered fast.",
+        body: "The complete marketing package: immersive tour, twilight shoot, lifestyle b-roll and vertical cuts for social, delivered fast.",
         featured: false,
       },
     ],
@@ -103,7 +103,7 @@ const en = {
     finalHeading: "Your next listing deserves more than photos.",
     finalCta: "Check Availability for Your Listing",
     finalNote:
-      "Tell us about the property — we confirm availability within one business day.",
+      "Tell us about the property and we'll confirm availability within one business day.",
   },
   portfolio: {
     eyebrow: "Our Work",
@@ -126,7 +126,7 @@ const en = {
   services: {
     eyebrow: "Services & Packages",
     h1: "Per-property packages, built for campaigns.",
-    sub: "Simple, per-listing pricing that scales with the property — no hourly rates, no surprises. Every package is quoted to the campaign.",
+    sub: "Simple per-listing pricing that scales with the property. No hourly rates, no surprises, and every package is quoted to the campaign.",
     mostPopular: "Most Popular",
     quoteCta: "Request a Quote",
     packages: [
@@ -169,8 +169,8 @@ const en = {
         ],
       },
     ],
-    retainerPre: "Multi-listing and agency retainer packages available — ",
-    retainerLink: "talk to us about your pipeline",
+    retainerPre: "Multi-listing and agency retainer packages are available. ",
+    retainerLink: "Talk to us about your pipeline",
     retainerPost: ".",
     processEyebrow: "How It Works",
     processHeading: "From enquiry to campaign-ready in days.",
@@ -183,7 +183,7 @@ const en = {
       {
         step: "02",
         title: "We Shoot",
-        body: "Our two-person crew handles everything on-site — flight planning, safety checks and capture — typically in a single session.",
+        body: "Our two-person crew handles everything on-site: flight planning, safety checks and capture, typically in a single session.",
       },
       {
         step: "03",
@@ -197,9 +197,9 @@ const en = {
     h1: "A production partner, not a drone operator.",
     p1a: "Apex Motion Studios was founded on a simple observation: the properties that sell fastest are the ones buyers can already picture themselves living in. Static photography shows a house. A one-take FPV tour lets a buyer ",
     p1em: "move through a home",
-    p1b: " — feeling its flow, its scale and its light before they ever step inside.",
-    p2: "We operate as a dedicated two-person crew on every shoot. Our registered operator and safety officer oversees flight planning, risk assessment and compliance, while our pilot focuses entirely on the craft — threading a single, seamless flight path through a property that would take a conventional videographer a full day of cuts to approximate.",
-    p3: "That structure is deliberate. It means agents and vendors get a true production partner on-site — the cinematic instincts of a film crew, backed by the reliability of an established supplier.",
+    p1b: ", feeling its flow, its scale and its light before they ever step inside.",
+    p2: "We operate as a dedicated two-person crew on every shoot. Our registered operator and safety officer oversees flight planning, risk assessment and compliance, while our pilot focuses entirely on the craft: threading a single, seamless flight path through a property that would take a conventional videographer a full day of cuts to approximate.",
+    p3: "That structure is deliberate. It means agents and vendors get a true production partner on-site, with the cinematic instincts of a film crew and the reliability of an established supplier.",
     credentialsHeading: "Credentials",
     credentials: [
       "CASA-registered operator on every shoot",
@@ -217,7 +217,7 @@ const en = {
   contact: {
     eyebrow: "Contact",
     h1: "Check availability for your listing.",
-    sub: "Tell us about the property and your campaign timeline — we’ll come back with availability and a tailored quote within one business day.",
+    sub: "Tell us about the property and your campaign timeline. We’ll come back with availability and a tailored quote within one business day.",
     name: "Your name",
     agency: "Agency",
     email: "Email",
@@ -242,7 +242,7 @@ const en = {
     thanksBack: "Back to home",
     areaHeading: "Service area",
     areaBody:
-      "Greater Sydney — from the Eastern Suburbs and Lower North Shore to the Northern Beaches, Inner West and Hills District. Regional NSW by arrangement.",
+      "Greater Sydney, from the Eastern Suburbs and Lower North Shore to the Northern Beaches, Inner West and Hills District. Regional NSW by arrangement.",
   },
   meta: {
     home: {
@@ -263,7 +263,7 @@ const en = {
     about: {
       title: "The Studio",
       description:
-        "Apex Motion Studios is a Sydney production studio for premium real estate media — a professional two-person crew, fully insured and CASA-compliant.",
+        "Apex Motion Studios is a Sydney production studio for premium real estate media, run by a professional two-person crew, fully insured and CASA-compliant.",
     },
     contact: {
       title: "Book a Shoot",
@@ -342,7 +342,7 @@ const zh: Dict = {
       {
         "index": "01",
         "title": "CASA 注册运营人",
-        "body": "每一次飞行，都由注册运营人兼安全官全程把关。合规功课在起飞前做足——没有监管意外，也不会临时取消拍摄。"
+        "body": "每一次飞行，都由注册运营人兼安全官全程把关。合规功课在起飞前做足：没有监管意外，也不会临时取消拍摄。"
       },
       {
         "index": "02",
@@ -370,7 +370,7 @@ const zh: Dict = {
     "aboutEyebrow": "工作室",
     "aboutHeading": "沉浸式影像，先打动买家，再打动市场。",
     "aboutP1": "一鸣惊人传媒（Apex Motion Studios）是悉尼一家高端房产影像工作室。我们的招牌是一镜到底 FPV 导览：一次流畅的飞行，带买家穿过整套房源，动线、尺度与光影一路展开。这样的临场感，静态照片给不了。",
-    "aboutP2": "配上电影级航拍外景，房源第一眼就与众不同——更多高意向买家走进开放看房，成交也来得更快。每次拍摄都有全额公众责任险，符合 CASA 规范，由专职双人团队执行；您拿到广播级成片，不必承担任何运营风险。",
+    "aboutP2": "配上电影级航拍外景，房源第一眼就与众不同：更多高意向买家走进开放看房，成交也来得更快。每次拍摄都有全额公众责任险，符合 CASA 规范，由专职双人团队执行；您拿到广播级成片，不必承担任何运营风险。",
     "aboutLink": "了解工作室",
     "featureLabel": "一镜到底 FPV 导览——精选示例",
     "featureSub": "点击播放 · 延迟加载",
@@ -393,7 +393,7 @@ const zh: Dict = {
       {
         "index": "03",
         "title": "旗舰全案",
-        "body": "一次拍齐整套营销素材：沉浸导览、暮色拍摄、生活方式镜头与竖版剪辑——48 小时优先交付。",
+        "body": "一次拍齐整套营销素材：沉浸导览、暮色拍摄、生活方式镜头与竖版剪辑，48 小时优先交付。",
         "featured": false
       }
     ],
@@ -484,7 +484,7 @@ const zh: Dict = {
         ]
       }
     ],
-    "retainerPre": "多房源拍摄与中介机构长期合作均可安排——",
+    "retainerPre": "多房源拍摄与中介机构长期合作均可安排。",
     "retainerLink": "聊聊您接下来的房源",
     "retainerPost": "。",
     "processEyebrow": "合作流程",
@@ -512,9 +512,9 @@ const zh: Dict = {
     "h1": "制作伙伴，而非无人机操作员。",
     "p1a": "一鸣惊人传媒（Apex Motion Studios）的起点，是一个朴素的观察：卖得最快的房子，是买家已经能想象自己住进去的房子。静态照片拍的是房子，一镜到底 FPV 导览让买家提前",
     "p1em": "走进一个家",
-    "p1b": "——动线、尺度与光影，人还没进门，心里已经有数。",
-    "p2": "每次拍摄，到场的都是专职双人团队。注册运营人兼安全官统筹航线规划、风险评估与合规，飞手只专注一件事——创作。一条流畅的飞行路线穿越整套房源，换作传统摄像师，剪上一整天也只能接近这个效果。",
-    "p3": "这样的架构是刻意为之。中介和业主请到现场的，是一个专业的制作伙伴——论创作，有电影团队的直觉；论交付，有成熟供应商的可靠。",
+    "p1b": "。动线、尺度与光影，人还没进门，心里已经有数。",
+    "p2": "每次拍摄，到场的都是专职双人团队。注册运营人兼安全官统筹航线规划、风险评估与合规，飞手只专注一件事：创作。一条流畅的飞行路线穿越整套房源，换作传统摄像师，剪上一整天也只能接近这个效果。",
+    "p3": "这样的架构是刻意为之。中介和业主请到现场的，是一个专业的制作伙伴：论创作，有电影团队的直觉；论交付，有成熟供应商的可靠。",
     "credentialsHeading": "资质与保障",
     "credentials": [
       "每次拍摄均有 CASA 注册运营人在场",

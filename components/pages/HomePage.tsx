@@ -21,7 +21,15 @@ export default function HomePage({ lang }: { lang: Lang }) {
         <div className="relative mx-auto max-w-6xl px-4 pb-24 pt-16 sm:px-6 sm:pt-28">
           <p className="eyebrow">{t.eyebrow}</p>
           <h1 className="mt-4 text-4xl font-extrabold leading-tight tracking-tight text-text sm:text-6xl">
-            {clauses(t.h1, lang)}
+            {/* One sentence per line, hard break between them */}
+            {t.h1
+              .split(/(?<=[.。])\s*/)
+              .filter(Boolean)
+              .map((sentence, i) => (
+                <span key={i} className="block">
+                  {clauses(sentence, lang)}
+                </span>
+              ))}
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-muted">
             {t.sub}
