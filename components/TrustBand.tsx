@@ -4,23 +4,23 @@ export default function TrustBand({ lang }: { lang: Lang }) {
   const t = dictionaries[lang].trust;
 
   return (
-    <section className="border-y border-line">
+    <section className="bg-surface">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <p className="eyebrow">{t.eyebrow}</p>
-        <h2 className="mt-4 max-w-2xl font-display text-3xl font-semibold tracking-tight text-cream sm:text-4xl">
+        <h2 className="mt-3 max-w-2xl text-3xl font-bold tracking-tight text-text sm:text-4xl">
           {t.heading}
         </h2>
-        <div className="mt-12 grid divide-y divide-line border-t border-line sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+        <div className="mt-10 grid gap-6 sm:grid-cols-3">
           {t.items.map((item) => (
-            <div
-              key={item.index}
-              className="py-8 sm:px-8 sm:first:pl-0 sm:last:pr-0"
-            >
-              <p className="text-xs text-muted">{item.index}</p>
-              <p className="mt-3 text-sm font-semibold uppercase tracking-[0.15em] text-cream">
-                {item.title}
-              </p>
-              <p className="mt-3 text-sm leading-relaxed text-muted">
+            <div key={item.index} className="card p-6">
+              <span
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-accent/10 text-sm font-bold text-accent"
+                aria-hidden
+              >
+                ✓
+              </span>
+              <p className="mt-4 font-semibold text-text">{item.title}</p>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
                 {item.body}
               </p>
             </div>

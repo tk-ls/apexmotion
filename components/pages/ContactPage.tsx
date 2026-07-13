@@ -1,28 +1,35 @@
 import { dictionaries, type Lang } from "@/lib/i18n";
 
 const inputClasses =
-  "w-full rounded-[4px] border border-line bg-panel px-4 py-3 text-sm text-cream placeholder:text-muted/60 focus:border-cream focus:outline-none";
+  "w-full rounded-lg border border-line bg-bg px-4 py-3 text-sm text-text placeholder:text-muted/60 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent";
 
 export default function ContactPage({ lang }: { lang: Lang }) {
   const t = dictionaries[lang].contact;
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+    <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
       <p className="eyebrow">{t.eyebrow}</p>
-      <h1 className="mt-6 max-w-3xl font-display text-4xl font-semibold leading-[1.05] tracking-tight text-cream sm:text-6xl">
+      <h1 className="mt-4 max-w-3xl text-4xl font-extrabold leading-tight tracking-tight text-text sm:text-5xl">
         {t.h1}
       </h1>
-      <p className="mt-6 max-w-xl text-muted">{t.sub}</p>
+      <p className="mt-5 max-w-xl text-muted">{t.sub}</p>
 
-      <div className="mt-14 grid gap-12 border-t border-line pt-14 lg:grid-cols-[2fr_1fr]">
+      <div className="mt-12 grid gap-10 lg:grid-cols-[2fr_1fr]">
         {/*
           TODO before launch: wire this form to a backend.
           Easiest options: Formspree (set action="https://formspree.io/f/YOUR_FORM_ID"
           and method="POST") or a Next.js route handler + email service (Resend).
         */}
-        <form className="grid gap-5 sm:grid-cols-2" action="#" method="POST">
+        <form
+          className="card grid gap-5 p-8 sm:grid-cols-2"
+          action="#"
+          method="POST"
+        >
           <div>
-            <label htmlFor="name" className="mb-2 block text-sm text-cream/85">
+            <label
+              htmlFor="name"
+              className="mb-2 block text-sm font-medium text-text"
+            >
               {t.name}
             </label>
             <input
@@ -35,7 +42,10 @@ export default function ContactPage({ lang }: { lang: Lang }) {
             />
           </div>
           <div>
-            <label htmlFor="agency" className="mb-2 block text-sm text-cream/85">
+            <label
+              htmlFor="agency"
+              className="mb-2 block text-sm font-medium text-text"
+            >
               {t.agency}
             </label>
             <input
@@ -47,7 +57,10 @@ export default function ContactPage({ lang }: { lang: Lang }) {
             />
           </div>
           <div>
-            <label htmlFor="email" className="mb-2 block text-sm text-cream/85">
+            <label
+              htmlFor="email"
+              className="mb-2 block text-sm font-medium text-text"
+            >
               {t.email}
             </label>
             <input
@@ -60,7 +73,10 @@ export default function ContactPage({ lang }: { lang: Lang }) {
             />
           </div>
           <div>
-            <label htmlFor="phone" className="mb-2 block text-sm text-cream/85">
+            <label
+              htmlFor="phone"
+              className="mb-2 block text-sm font-medium text-text"
+            >
               {t.phone}
             </label>
             <input
@@ -72,7 +88,10 @@ export default function ContactPage({ lang }: { lang: Lang }) {
             />
           </div>
           <div className="sm:col-span-2">
-            <label htmlFor="address" className="mb-2 block text-sm text-cream/85">
+            <label
+              htmlFor="address"
+              className="mb-2 block text-sm font-medium text-text"
+            >
               {t.address}
             </label>
             <input
@@ -83,7 +102,10 @@ export default function ContactPage({ lang }: { lang: Lang }) {
             />
           </div>
           <div>
-            <label htmlFor="package" className="mb-2 block text-sm text-cream/85">
+            <label
+              htmlFor="package"
+              className="mb-2 block text-sm font-medium text-text"
+            >
               {t.packageLabel}
             </label>
             <select id="package" name="package" className={inputClasses}>
@@ -93,7 +115,10 @@ export default function ContactPage({ lang }: { lang: Lang }) {
             </select>
           </div>
           <div>
-            <label htmlFor="timeline" className="mb-2 block text-sm text-cream/85">
+            <label
+              htmlFor="timeline"
+              className="mb-2 block text-sm font-medium text-text"
+            >
               {t.timeline}
             </label>
             <input
@@ -105,7 +130,10 @@ export default function ContactPage({ lang }: { lang: Lang }) {
             />
           </div>
           <div className="sm:col-span-2">
-            <label htmlFor="message" className="mb-2 block text-sm text-cream/85">
+            <label
+              htmlFor="message"
+              className="mb-2 block text-sm font-medium text-text"
+            >
               {t.message}
             </label>
             <textarea
@@ -123,31 +151,27 @@ export default function ContactPage({ lang }: { lang: Lang }) {
         </form>
 
         <aside className="space-y-6">
-          <div className="border-t border-line pt-6">
-            <h2 className="text-sm font-semibold uppercase tracking-[0.15em] text-cream">
-              {t.talkHeading}
-            </h2>
+          <div className="card p-7">
+            <h2 className="font-bold text-text">{t.talkHeading}</h2>
             {/* TODO: Replace placeholder contact details before launch */}
-            <ul className="mt-4 space-y-2 text-sm text-cream/85">
+            <ul className="mt-4 space-y-2 text-sm text-muted">
               <li>
                 <a
                   href="mailto:hello@apexmotionstudios.com.au"
-                  className="hover:text-cream"
+                  className="hover:text-accent"
                 >
                   hello@apexmotionstudios.com.au
                 </a>
               </li>
               <li>
-                <a href="tel:+61400000000" className="hover:text-cream">
+                <a href="tel:+61400000000" className="hover:text-accent">
                   0400 000 000
                 </a>
               </li>
             </ul>
           </div>
-          <div className="border-t border-line pt-6">
-            <h2 className="text-sm font-semibold uppercase tracking-[0.15em] text-cream">
-              {t.areaHeading}
-            </h2>
+          <div className="card p-7">
+            <h2 className="font-bold text-text">{t.areaHeading}</h2>
             <p className="mt-3 text-sm leading-relaxed text-muted">
               {t.areaBody}
             </p>

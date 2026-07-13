@@ -10,23 +10,21 @@ function LangSwitch({ lang, className = "" }: { lang: Lang; className?: string }
   const pathname = usePathname() ?? "/";
   const basePath = pathname.replace(/^\/zh(?=\/|$)/, "") || "/";
   return (
-    <span
-      className={`flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] ${className}`}
-    >
+    <span className={`flex items-center gap-2 text-sm font-medium ${className}`}>
       <Link
         href={href("en", basePath)}
-        className={lang === "en" ? "text-cream" : "text-muted hover:text-cream"}
+        className={lang === "en" ? "text-text" : "text-muted hover:text-text"}
         aria-current={lang === "en" ? "true" : undefined}
       >
         EN
       </Link>
       <span className="text-line" aria-hidden>
-        /
+        |
       </span>
       <Link
         href={href("zh", basePath)}
         lang="zh"
-        className={lang === "zh" ? "text-cream" : "text-muted hover:text-cream"}
+        className={lang === "zh" ? "text-text" : "text-muted hover:text-text"}
         aria-current={lang === "zh" ? "true" : undefined}
       >
         中文
@@ -40,13 +38,13 @@ export default function Header({ lang }: { lang: Lang }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-ink/90 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-line bg-bg/95 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link href={href(lang, "/")}>
           <Logo lang={lang} />
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-7 md:flex">
           {t.nav.items.map((item) => (
             <NavLink key={item.path} lang={lang} path={item.path} label={item.label} />
           ))}
@@ -58,7 +56,7 @@ export default function Header({ lang }: { lang: Lang }) {
 
         <button
           type="button"
-          className="flex h-10 w-10 items-center justify-center border border-line text-cream md:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-lg border border-line text-text md:hidden"
           aria-expanded={open}
           aria-label="Toggle navigation menu"
           onClick={() => setOpen((v) => !v)}
@@ -68,7 +66,7 @@ export default function Header({ lang }: { lang: Lang }) {
       </div>
 
       {open && (
-        <nav className="border-t border-line bg-ink px-4 pb-6 pt-2 md:hidden">
+        <nav className="border-t border-line bg-bg px-4 pb-6 pt-2 md:hidden">
           {t.nav.items.map((item) => (
             <MobileNavLink
               key={item.path}
@@ -98,8 +96,8 @@ function NavLink({ lang, path, label }: { lang: Lang; path: string; label: strin
   return (
     <Link
       href={target}
-      className={`text-xs font-medium uppercase tracking-[0.2em] transition-colors hover:text-cream ${
-        pathname === target ? "text-cream" : "text-muted"
+      className={`text-sm font-medium transition-colors hover:text-text ${
+        pathname === target ? "text-accent" : "text-muted"
       }`}
     >
       {label}
@@ -124,8 +122,8 @@ function MobileNavLink({
     <Link
       href={target}
       onClick={onClick}
-      className={`block border-b border-line py-4 text-sm uppercase tracking-[0.2em] ${
-        pathname === target ? "text-cream" : "text-muted"
+      className={`block border-b border-line py-4 text-base font-medium ${
+        pathname === target ? "text-accent" : "text-text"
       }`}
     >
       {label}

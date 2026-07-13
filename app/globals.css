@@ -1,24 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #f5f4f0;
+  --background: #ffffff;
+  --foreground: #2c2c2c;
 }
 
 @theme inline {
-  /* Palette — near-monochrome. Video supplies the colour; gold is a whisper. */
-  --color-ink: #0a0a0a;
-  --color-panel: #101010;
-  --color-line: #262626;
-  --color-gold: #c6a15b;
-  --color-cream: #f5f4f0;
-  --color-muted: #8f8f8a;
+  /* Light portal palette — clean, trustworthy, realestate.com.au-inspired.
+     Swap --color-accent to rebrand; everything else is neutral. */
+  --color-bg: #ffffff;
+  --color-surface: #f6f5f3;
+  --color-line: #e4e2df;
+  --color-text: #2c2c2c;
+  --color-muted: #6d6a66;
+  --color-accent: #e4002b;
+  --color-accent-dark: #b80023;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
   --font-sans: var(--font-inter), var(--font-noto-sans-sc);
-  --font-display: var(--font-fraunces), var(--font-noto-serif-sc);
 }
 
 body {
@@ -28,30 +29,22 @@ body {
     sans-serif;
 }
 
-/*
- * Chinese pages: serif CJK display type reads dated to native eyes — the
- * tech/cinematic convention (Apple CN, DJI) is bold heiti. Scope-override the
- * display font chain to sans, and drop the latin tracking-tight on headings,
- * which cramps CJK glyphs.
- */
-.zh {
-  --font-fraunces: var(--font-inter);
-  --font-noto-serif-sc: var(--font-noto-sans-sc);
-}
-.zh .font-display {
+/* Latin tracking-tight cramps CJK glyphs on the Chinese pages */
+.zh :is(h1, h2, h3) {
   letter-spacing: 0;
-  font-weight: 700;
 }
 
 @layer components {
-  /* Typographic buttons — barely-rounded, subtle lift on hover */
   .btn-solid {
-    @apply inline-flex items-center justify-center gap-3 rounded-[4px] bg-cream px-7 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-ink transition-all duration-200 hover:-translate-y-px hover:bg-gold;
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-accent-dark;
   }
   .btn-outline {
-    @apply inline-flex items-center justify-center gap-3 rounded-[4px] border border-cream/30 px-7 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-cream transition-all duration-200 hover:-translate-y-px hover:border-cream hover:bg-cream hover:text-ink;
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-accent px-6 py-3.5 text-sm font-semibold text-accent transition-colors hover:bg-accent/5;
   }
   .eyebrow {
-    @apply text-[0.65rem] font-medium uppercase tracking-[0.35em] text-gold;
+    @apply text-xs font-semibold uppercase tracking-[0.12em] text-accent;
+  }
+  .card {
+    @apply rounded-xl border border-line bg-bg shadow-sm;
   }
 }

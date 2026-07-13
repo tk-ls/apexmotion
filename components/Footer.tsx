@@ -6,14 +6,20 @@ export default function Footer({ lang }: { lang: Lang }) {
   const t = dictionaries[lang].footer;
 
   return (
-    <footer className="border-t border-line">
+    <footer className="border-t border-line bg-surface">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-3 border-b border-line py-6">
           {t.badges.map((badge) => (
             <span
               key={badge}
-              className="text-[0.65rem] font-medium uppercase tracking-[0.25em] text-muted"
+              className="flex items-center gap-2 text-sm font-medium text-muted"
             >
+              <span
+                className="flex h-5 w-5 items-center justify-center rounded-full bg-accent/10 text-xs text-accent"
+                aria-hidden
+              >
+                ✓
+              </span>
               {badge}
             </span>
           ))}
@@ -28,13 +34,13 @@ export default function Footer({ lang }: { lang: Lang }) {
           </div>
 
           <nav className="text-sm">
-            <p className="eyebrow mb-4">{t.explore}</p>
+            <p className="mb-4 font-semibold text-text">{t.explore}</p>
             <ul className="space-y-2">
               {t.exploreLinks.map((link) => (
                 <li key={link.path}>
                   <Link
                     href={href(lang, link.path)}
-                    className="text-cream/80 hover:text-cream"
+                    className="text-muted hover:text-accent"
                   >
                     {link.label}
                   </Link>
@@ -44,28 +50,28 @@ export default function Footer({ lang }: { lang: Lang }) {
           </nav>
 
           <div className="text-sm">
-            <p className="eyebrow mb-4">{t.contact}</p>
+            <p className="mb-4 font-semibold text-text">{t.contact}</p>
             {/* TODO: Replace placeholder contact details before launch */}
-            <ul className="space-y-2 text-cream/80">
+            <ul className="space-y-2 text-muted">
               <li>
                 <a
                   href="mailto:hello@apexmotionstudios.com.au"
-                  className="hover:text-cream"
+                  className="hover:text-accent"
                 >
                   hello@apexmotionstudios.com.au
                 </a>
               </li>
               <li>
-                <a href="tel:+61400000000" className="hover:text-cream">
+                <a href="tel:+61400000000" className="hover:text-accent">
                   0400 000 000
                 </a>
               </li>
-              <li className="text-muted">{t.servicing}</li>
+              <li>{t.servicing}</li>
             </ul>
           </div>
         </div>
 
-        <p className="border-t border-line py-6 text-xs uppercase tracking-[0.2em] text-muted">
+        <p className="border-t border-line py-6 text-xs text-muted">
           © {new Date().getFullYear()} {t.rights} {/* TODO: add ABN */}
         </p>
       </div>

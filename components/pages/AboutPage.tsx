@@ -7,33 +7,34 @@ export default function AboutPage({ lang }: { lang: Lang }) {
 
   return (
     <>
-      <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <p className="eyebrow">{t.eyebrow}</p>
-        <h1 className="mt-6 max-w-3xl font-display text-4xl font-semibold leading-[1.05] tracking-tight text-cream sm:text-6xl">
+        <h1 className="mt-4 max-w-3xl text-4xl font-extrabold leading-tight tracking-tight text-text sm:text-5xl">
           {t.h1}
         </h1>
 
-        <div className="mt-14 grid gap-12 border-t border-line pt-14 md:grid-cols-2">
+        <div className="mt-12 grid gap-12 md:grid-cols-2">
           <div className="space-y-5 leading-relaxed text-muted">
             <p>
               {t.p1a}
-              <em className="text-cream">{t.p1em}</em>
+              <em className="font-medium not-italic text-text">{t.p1em}</em>
               {t.p1b}
             </p>
             <p>{t.p2}</p>
             <p>{t.p3}</p>
           </div>
 
-          <div className="space-y-10">
-            <div className="border-t border-line pt-6 md:border-t-0 md:pt-0">
-              <h2 className="text-sm font-semibold uppercase tracking-[0.15em] text-cream">
-                {t.credentialsHeading}
-              </h2>
-              <ul className="mt-5 space-y-3 text-sm text-cream/85">
+          <div className="space-y-6">
+            <div className="card p-7">
+              <h2 className="font-bold text-text">{t.credentialsHeading}</h2>
+              <ul className="mt-4 space-y-3 text-sm text-text">
                 {t.credentials.map((item) => (
                   <li key={item} className="flex gap-3">
-                    <span className="text-muted" aria-hidden>
-                      —
+                    <span
+                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/10 text-xs text-accent"
+                      aria-hidden
+                    >
+                      ✓
                     </span>
                     {item}
                   </li>
@@ -41,11 +42,9 @@ export default function AboutPage({ lang }: { lang: Lang }) {
               </ul>
             </div>
 
-            <div className="border-t border-line pt-6">
-              <h2 className="text-sm font-semibold uppercase tracking-[0.15em] text-cream">
-                {t.everyShootHeading}
-              </h2>
-              <p className="mt-5 text-sm leading-relaxed text-muted">
+            <div className="card p-7">
+              <h2 className="font-bold text-text">{t.everyShootHeading}</h2>
+              <p className="mt-4 text-sm leading-relaxed text-muted">
                 {t.everyShootBody}
               </p>
             </div>
@@ -56,16 +55,18 @@ export default function AboutPage({ lang }: { lang: Lang }) {
       <TrustBand lang={lang} />
 
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-        <h2 className="max-w-2xl font-display text-3xl font-semibold tracking-tight text-cream sm:text-4xl">
-          {t.closingHeading}
-        </h2>
-        <div className="mt-8 flex flex-wrap items-center gap-4">
-          <Link href={href(lang, "/portfolio")} className="btn-outline">
-            {t.closingWork}
-          </Link>
-          <Link href={href(lang, "/contact")} className="btn-solid">
-            {t.closingBook}
-          </Link>
+        <div className="card flex flex-col items-start gap-6 p-10 sm:flex-row sm:items-center sm:justify-between">
+          <h2 className="max-w-xl text-2xl font-bold tracking-tight text-text sm:text-3xl">
+            {t.closingHeading}
+          </h2>
+          <div className="flex shrink-0 flex-wrap gap-4">
+            <Link href={href(lang, "/portfolio")} className="btn-outline">
+              {t.closingWork}
+            </Link>
+            <Link href={href(lang, "/contact")} className="btn-solid">
+              {t.closingBook}
+            </Link>
+          </div>
         </div>
       </div>
     </>

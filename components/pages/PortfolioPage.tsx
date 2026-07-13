@@ -10,15 +10,15 @@ export default function PortfolioPage({ lang }: { lang: Lang }) {
   const t = dictionaries[lang].portfolio;
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+    <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
       <p className="eyebrow">{t.eyebrow}</p>
-      <h1 className="mt-6 max-w-3xl font-display text-4xl font-semibold leading-[1.05] tracking-tight text-cream sm:text-6xl">
+      <h1 className="mt-4 max-w-3xl text-4xl font-extrabold leading-tight tracking-tight text-text sm:text-5xl">
         {t.h1}
       </h1>
-      <p className="mt-6 max-w-xl text-muted">{t.sub}</p>
+      <p className="mt-5 max-w-xl text-muted">{t.sub}</p>
 
       {/* Featured film — your single strongest one-take tour */}
-      <div className="mt-14 border-t border-line pt-14">
+      <div className="mt-12">
         <VideoPlaceholder
           label={t.featuredLabel}
           sublabel={t.featuredSub}
@@ -26,38 +26,34 @@ export default function PortfolioPage({ lang }: { lang: Lang }) {
         />
       </div>
 
-      {/* Project grid */}
-      <div className="mt-16 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-        {t.projects.map((project, i) => (
-          <article key={`${project.suburb}-${project.type}`}>
-            <VideoPlaceholder
-              label={`${project.suburb} — ${project.type}`}
-              sublabel={t.sampleNote}
-            />
-            <div className="mt-4 flex items-baseline justify-between border-t border-line pt-3">
-              <div>
-                <h2 className="font-display text-lg font-semibold text-cream">
-                  {project.suburb}
-                </h2>
-                <p className="text-xs uppercase tracking-[0.15em] text-muted">
-                  {project.type}
-                </p>
-              </div>
-              <p className="text-xs text-muted">
-                {String(i + 1).padStart(2, "0")}
-              </p>
+      {/* Project grid — listing-style cards */}
+      <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {t.projects.map((project) => (
+          <article
+            key={`${project.suburb}-${project.type}`}
+            className="card overflow-hidden"
+          >
+            <div className="[&>div]:rounded-none">
+              <VideoPlaceholder
+                label={`${project.suburb} — ${project.type}`}
+                sublabel={t.sampleNote}
+              />
             </div>
-            {/* Add a one-line result per project when available,
-                e.g. "Sold prior to auction" — results sell to agents. */}
+            <div className="p-5">
+              <h2 className="text-lg font-bold text-text">{project.suburb}</h2>
+              <p className="mt-0.5 text-sm text-muted">{project.type}</p>
+              {/* Add a one-line result per project when available,
+                  e.g. "Sold prior to auction" — results sell to agents. */}
+            </div>
           </article>
         ))}
       </div>
 
-      <div className="mt-20 border-t border-line pt-14">
-        <h2 className="max-w-2xl font-display text-3xl font-semibold tracking-tight text-cream sm:text-4xl">
+      <div className="card mt-14 flex flex-col items-start gap-6 p-10 sm:flex-row sm:items-center sm:justify-between">
+        <h2 className="max-w-xl text-2xl font-bold tracking-tight text-text sm:text-3xl">
           {t.closingHeading}
         </h2>
-        <Link href={href(lang, "/contact")} className="btn-solid mt-8">
+        <Link href={href(lang, "/contact")} className="btn-solid shrink-0">
           {t.closingCta}
         </Link>
       </div>

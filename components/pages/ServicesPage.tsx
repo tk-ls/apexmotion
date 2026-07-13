@@ -7,40 +7,36 @@ export default function ServicesPage({ lang }: { lang: Lang }) {
 
   return (
     <>
-      <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <p className="eyebrow">{t.eyebrow}</p>
-        <h1 className="mt-6 max-w-3xl font-display text-4xl font-semibold leading-[1.05] tracking-tight text-cream sm:text-6xl">
+        <h1 className="mt-4 max-w-3xl text-4xl font-extrabold leading-tight tracking-tight text-text sm:text-5xl">
           {t.h1}
         </h1>
-        <p className="mt-6 max-w-xl text-muted">{t.sub}</p>
+        <p className="mt-5 max-w-xl text-muted">{t.sub}</p>
 
-        <div className="mt-14 grid divide-y divide-line border-y border-line lg:grid-cols-3 lg:divide-x lg:divide-y-0">
+        <div className="mt-12 grid items-start gap-6 lg:grid-cols-3">
           {t.packages.map((pkg) => (
             <div
               key={pkg.index}
-              className={`flex flex-col py-10 lg:px-8 ${
-                pkg.featured ? "lg:bg-panel" : ""
+              className={`card flex flex-col p-8 ${
+                pkg.featured ? "ring-2 ring-accent" : ""
               }`}
             >
-              <div className="flex items-baseline justify-between">
-                <p className="text-xs text-muted">{pkg.index}</p>
-                {pkg.featured && (
-                  <p className="text-[0.6rem] font-semibold uppercase tracking-[0.2em] text-gold">
-                    {t.mostPopular}
-                  </p>
-                )}
-              </div>
-              <h2 className="mt-4 font-display text-2xl font-semibold text-cream">
-                {pkg.name}
-              </h2>
-              <p className="mt-1 text-xs uppercase tracking-[0.15em] text-muted">
-                {pkg.tagline}
-              </p>
-              <ul className="mt-8 flex-1 space-y-3 text-sm text-cream/85">
+              {pkg.featured && (
+                <span className="mb-4 self-start rounded-full bg-accent px-3 py-1 text-xs font-semibold text-white">
+                  {t.mostPopular}
+                </span>
+              )}
+              <h2 className="text-2xl font-bold text-text">{pkg.name}</h2>
+              <p className="mt-1 text-sm text-muted">{pkg.tagline}</p>
+              <ul className="mt-6 flex-1 space-y-3 text-sm text-text">
                 {pkg.includes.map((item) => (
                   <li key={item} className="flex gap-3">
-                    <span className="text-muted" aria-hidden>
-                      —
+                    <span
+                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/10 text-xs text-accent"
+                      aria-hidden
+                    >
+                      ✓
                     </span>
                     {item}
                   </li>
@@ -48,7 +44,7 @@ export default function ServicesPage({ lang }: { lang: Lang }) {
               </ul>
               <Link
                 href={href(lang, "/contact")}
-                className={`mt-10 whitespace-nowrap ${
+                className={`mt-8 whitespace-nowrap ${
                   pkg.featured ? "btn-solid" : "btn-outline"
                 }`}
               >
@@ -62,7 +58,7 @@ export default function ServicesPage({ lang }: { lang: Lang }) {
           {t.retainerPre}
           <Link
             href={href(lang, "/contact")}
-            className="text-cream underline decoration-gold underline-offset-4 hover:text-gold"
+            className="font-semibold text-accent hover:text-accent-dark"
           >
             {t.retainerLink}
           </Link>
@@ -75,20 +71,17 @@ export default function ServicesPage({ lang }: { lang: Lang }) {
       {/* Process */}
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
         <p className="eyebrow">{t.processEyebrow}</p>
-        <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight text-cream sm:text-4xl">
+        <h2 className="mt-3 text-3xl font-bold tracking-tight text-text sm:text-4xl">
           {t.processHeading}
         </h2>
-        <div className="mt-12 grid divide-y divide-line border-t border-line sm:grid-cols-3 sm:divide-x sm:divide-y-0">
-          {t.process.map((item) => (
-            <div
-              key={item.step}
-              className="py-8 sm:px-8 sm:first:pl-0 sm:last:pr-0"
-            >
-              <p className="text-xs text-muted">{item.step}</p>
-              <h3 className="mt-3 font-display text-xl font-semibold text-cream">
-                {item.title}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted">
+        <div className="mt-10 grid gap-8 sm:grid-cols-3">
+          {t.process.map((item, i) => (
+            <div key={item.step}>
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-sm font-bold text-white">
+                {i + 1}
+              </span>
+              <h3 className="mt-4 text-xl font-bold text-text">{item.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
                 {item.body}
               </p>
             </div>

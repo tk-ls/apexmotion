@@ -9,7 +9,7 @@ export function href(lang: Lang, path: string): string {
 }
 
 const en = {
-  logo: { primary: "APEX MOTION", secondary: "Studios" },
+  logo: { primary: "Apex Motion", secondary: "Studios" },
   nav: {
     items: [
       { path: "/", label: "Home" },

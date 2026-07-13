@@ -1,7 +1,7 @@
 type VideoPlaceholderProps = {
   label: string;
   sublabel?: string;
-  /** Tailwind aspect class, e.g. "aspect-video" (default) or "aspect-[9/16]" */
+  /** Tailwind aspect class(es), e.g. "aspect-video" (default) */
   aspect?: string;
 };
 
@@ -24,23 +24,17 @@ export default function VideoPlaceholder({
 }: VideoPlaceholderProps) {
   return (
     <div
-      className={`relative ${aspect} w-full overflow-hidden rounded-lg border border-line bg-panel`}
+      className={`relative ${aspect} w-full overflow-hidden rounded-xl bg-[#211f1c]`}
     >
-      <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 p-6 text-center">
+      <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 p-6 text-center">
         <span
-          className="flex h-12 w-12 items-center justify-center rounded-full border border-cream/40 text-sm text-cream"
+          className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-sm text-white ring-1 ring-white/40"
           aria-hidden
         >
           ▶
         </span>
-        <p className="text-[0.65rem] font-medium uppercase tracking-[0.25em] text-cream">
-          {label}
-        </p>
-        {sublabel && (
-          <p className="text-[0.6rem] uppercase tracking-[0.2em] text-muted">
-            {sublabel}
-          </p>
-        )}
+        <p className="text-sm font-medium text-white/90">{label}</p>
+        {sublabel && <p className="text-xs text-white/50">{sublabel}</p>}
       </div>
     </div>
   );
