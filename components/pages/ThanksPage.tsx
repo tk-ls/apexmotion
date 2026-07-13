@@ -13,7 +13,7 @@ export default function ThanksPage({ lang }: { lang: Lang }) {
       >
         ✓
       </span>
-      <h1 className="mt-6 max-w-2xl text-4xl font-extrabold leading-tight tracking-tight text-text sm:text-5xl">
+      <h1 className="mt-6 text-4xl font-extrabold leading-tight tracking-tight text-text sm:text-5xl">
         {t.thanksTitle}
       </h1>
       <p className="mt-5 max-w-xl text-muted">{t.thanksBody}</p>

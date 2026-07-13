@@ -13,17 +13,17 @@ export default function HomePage({ lang }: { lang: Lang }) {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden">
-        {/* Soft Leuchtorange light-leak — the "studio lighting" cue */}
+        {/* Soft white light-leak — the "studio lighting" cue */}
         <div
-          className="pointer-events-none absolute -top-32 right-[-10%] h-[480px] w-[640px] rounded-full bg-accent/15 blur-[140px]"
+          className="pointer-events-none absolute -top-32 right-[-10%] h-[480px] w-[640px] rounded-full bg-white/10 blur-[140px]"
           aria-hidden
         />
         <div className="relative mx-auto max-w-6xl px-4 pb-24 pt-16 sm:px-6 sm:pt-28">
           <p className="eyebrow">{t.eyebrow}</p>
-          <h1 className="mt-4 max-w-4xl text-4xl font-extrabold leading-tight tracking-tight text-text sm:text-6xl">
+          <h1 className="mt-4 text-4xl font-extrabold leading-tight tracking-tight text-text sm:text-6xl">
             {clauses(t.h1, lang)}
           </h1>
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">
+          <p className="mt-5 text-lg leading-relaxed text-muted">
             {t.sub}
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
@@ -126,7 +126,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
           <Reveal>
           <div className="card flex flex-col items-start gap-6 p-10 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <h2 className="max-w-xl text-2xl font-bold tracking-tight text-text sm:text-3xl">
+              <h2 className="text-2xl font-bold tracking-tight text-text sm:text-3xl">
                 {clauses(t.finalHeading, lang)}
               </h2>
               <p className="mt-2 max-w-md text-sm text-muted">{t.finalNote}</p>

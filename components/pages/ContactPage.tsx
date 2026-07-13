@@ -12,10 +12,10 @@ export default function ContactPage({ lang }: { lang: Lang }) {
   return (
     <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
       <p className="eyebrow">{t.eyebrow}</p>
-      <h1 className="mt-4 max-w-4xl text-4xl font-extrabold leading-tight tracking-tight text-text sm:text-5xl">
+      <h1 className="mt-4 text-4xl font-extrabold leading-tight tracking-tight text-text sm:text-5xl">
         {clauses(t.h1, lang)}
       </h1>
-      <p className="mt-5 max-w-2xl text-muted">{t.sub}</p>
+      <p className="mt-5 max-w-4xl text-muted">{t.sub}</p>
 
       <div className="mt-12 grid gap-10 lg:grid-cols-[2fr_1fr]">
         {/*

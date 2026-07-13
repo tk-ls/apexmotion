@@ -31,10 +31,10 @@ export default function PortfolioPage({ lang }: { lang: Lang }) {
   return (
     <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
       <p className="eyebrow">{t.eyebrow}</p>
-      <h1 className="mt-4 max-w-4xl text-4xl font-extrabold leading-tight tracking-tight text-text sm:text-5xl">
+      <h1 className="mt-4 text-4xl font-extrabold leading-tight tracking-tight text-text sm:text-5xl">
         {clauses(t.h1, lang)}
       </h1>
-      <p className="mt-5 max-w-2xl text-muted">{t.sub}</p>
+      <p className="mt-5 text-muted">{t.sub}</p>
 
       {/* Featured film — replace with your single strongest one-take tour */}
       <div className="relative mt-12 overflow-hidden rounded-xl bg-black">
@@ -70,7 +70,7 @@ export default function PortfolioPage({ lang }: { lang: Lang }) {
       </div>
 
       <div className="card mt-14 flex flex-col items-start gap-6 p-10 sm:flex-row sm:items-center sm:justify-between">
-        <h2 className="max-w-xl text-2xl font-bold tracking-tight text-text sm:text-3xl">
+        <h2 className="text-2xl font-bold tracking-tight text-text sm:text-3xl">
           {clauses(t.closingHeading, lang)}
         </h2>
         <Link href={href(lang, "/contact")} className="btn-solid shrink-0">
