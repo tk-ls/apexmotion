@@ -34,6 +34,10 @@ export default function AutoVideo({
     <video
       ref={ref}
       src={src}
+      // Every clip ships a first-frame jpg next to it (mobile browsers
+      // won't paint a frame of an unplayed video, so without a poster the
+      // box sits black until playback starts).
+      poster={src.replace(/\.mp4$/, ".jpg")}
       muted
       loop
       playsInline

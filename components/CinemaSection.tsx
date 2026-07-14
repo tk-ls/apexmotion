@@ -134,10 +134,11 @@ export default function CinemaSection({
               ref={videoRef}
               className="block aspect-video w-full scale-[1.01] bg-black object-cover"
               src="/videos/showreel-placeholder.mp4"
+              poster="/videos/showreel-placeholder.jpg"
               muted
               loop
               playsInline
-              preload="metadata"
+              preload="auto"
               onError={() => setVideoOk(false)}
             />
           ) : (

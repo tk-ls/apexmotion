@@ -33,6 +33,9 @@ export default function RootLayout({
     <html
       lang="en-AU"
       className={`${inter.variable} ${notoSansSC.variable} h-full antialiased`}
+      // Inline so the very first paint is already dark — even if the
+      // stylesheet is still revalidating there is no white flash.
+      style={{ backgroundColor: "#121212", color: "#f2f2f2", colorScheme: "dark" }}
     >
       <body className="flex min-h-full flex-col bg-bg text-text">
         {children}

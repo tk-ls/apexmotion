@@ -1,0 +1,10 @@
+# Hashed build assets never change — let the browser keep them for a year.
+# Without this, Cloudflare Pages serves max-age=0 and every reload
+# revalidates the stylesheet, causing a brief flash of unstyled content.
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Videos and their poster frames: cache for a day (not hashed, so keep it
+# short enough that swapping in real footage at launch propagates quickly).
+/videos/*
+  Cache-Control: public, max-age=86400
