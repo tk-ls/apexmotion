@@ -51,6 +51,12 @@ export default function Header({ lang }: { lang: Lang }) {
   const pathname = usePathname() ?? "/";
   const [open, setOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
+  // Desktop dropdown: CSS :hover alone can't close the panel when an item
+  // is clicked (the cursor is still over it, and the clicked link keeps
+  // focus), so visibility is state-driven — open on mouse enter, closed on
+  // mouse leave or item click. Keyboard focus still opens it via
+  // group-focus-within.
+  const [hoverMenu, setHoverMenu] = useState<string | null>(null);
 
   const isMenuActive = (key: string) =>
     pathname.startsWith(href(lang, `/${key}`));
@@ -65,11 +71,16 @@ export default function Header({ lang }: { lang: Lang }) {
         {/* Desktop nav — hover/focus dropdowns per vertical */}
         <nav className="hidden items-center gap-6 md:flex">
           {t.nav.menus.map((menu) => (
-            <div key={menu.key} className="group relative">
-              {/* Blur on click so the panel follows the mouse: open on
-                  hover, gone on mouse-leave. Without this a click pins the
-                  menu via group-focus-within until you click elsewhere.
-                  Keyboard focus (Tab) still opens it. */}
+            <div
+              key={menu.key}
+              className="group relative"
+              onMouseEnter={() => setHoverMenu(menu.key)}
+              onMouseLeave={() =>
+                setHoverMenu((k) => (k === menu.key ? null : k))
+              }
+            >
+              {/* Blur on click so a click can't pin the panel open via
+                  group-focus-within after the mouse leaves. */}
               <button
                 type="button"
                 className={`flex items-center gap-1.5 py-2 text-sm font-medium transition-colors hover:text-text ${
@@ -78,14 +89,30 @@ export default function Header({ lang }: { lang: Lang }) {
                 onClick={(e) => e.currentTarget.blur()}
               >
                 {menu.label}
-                <Chevron className="h-1.5 w-2.5 transition-transform group-hover:rotate-180" />
+                <Chevron
+                  className={`h-1.5 w-2.5 transition-transform group-focus-within:rotate-180 ${
+                    hoverMenu === menu.key ? "rotate-180" : ""
+                  }`}
+                />
               </button>
-              <div className="invisible absolute left-1/2 top-full -translate-x-1/2 pt-2 opacity-0 transition-all duration-150 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+              <div
+                className={`absolute left-1/2 top-full -translate-x-1/2 pt-2 transition-all duration-150 group-focus-within:visible group-focus-within:opacity-100 ${
+                  hoverMenu === menu.key
+                    ? "visible opacity-100"
+                    : "invisible opacity-0"
+                }`}
+              >
                 <div className="card w-56 p-2 shadow-xl shadow-black/40">
                   {menu.items.map((item) => (
                     <Link
                       key={item.path}
                       href={href(lang, item.path)}
+                      onClick={(e) => {
+                        // Selecting an item closes the panel right away —
+                        // don't wait for the mouse to wander off it.
+                        e.currentTarget.blur();
+                        setHoverMenu(null);
+                      }}
                       className={`block rounded-lg px-3 py-2 text-sm transition-colors hover:bg-surface hover:text-text ${
                         pathname === href(lang, item.path)
                           ? "text-text"
