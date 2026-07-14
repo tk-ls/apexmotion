@@ -66,11 +66,16 @@ export default function Header({ lang }: { lang: Lang }) {
         <nav className="hidden items-center gap-6 md:flex">
           {t.nav.menus.map((menu) => (
             <div key={menu.key} className="group relative">
+              {/* Blur on click so the panel follows the mouse: open on
+                  hover, gone on mouse-leave. Without this a click pins the
+                  menu via group-focus-within until you click elsewhere.
+                  Keyboard focus (Tab) still opens it. */}
               <button
                 type="button"
                 className={`flex items-center gap-1.5 py-2 text-sm font-medium transition-colors hover:text-text ${
                   isMenuActive(menu.key) ? "text-text" : "text-muted"
                 }`}
+                onClick={(e) => e.currentTarget.blur()}
               >
                 {menu.label}
                 <Chevron className="h-1.5 w-2.5 transition-transform group-hover:rotate-180" />

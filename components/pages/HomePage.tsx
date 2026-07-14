@@ -22,13 +22,19 @@ export default function HomePage({ lang }: { lang: Lang }) {
         <div className="relative mx-auto max-w-6xl px-4 pb-24 pt-16 sm:px-6 sm:pt-28">
           <p className="eyebrow">{t.eyebrow}</p>
           <h1 className="mt-4 text-4xl font-extrabold leading-tight tracking-tight text-text sm:text-6xl">
-            {/* One sentence per line, hard break between them */}
+            {/* One sentence per line, hard break between them. Inside a
+                sentence, \n marks an extra phone-only break point. */}
             {t.h1
               .split(/(?<=[.。])\s*/)
               .filter(Boolean)
               .map((sentence, i) => (
                 <span key={i} className="block">
-                  {clauses(sentence, lang)}
+                  {sentence.split("\n").map((part, j, parts) => (
+                    <span key={j}>
+                      {clauses(part, lang)}
+                      {j < parts.length - 1 && <br className="sm:hidden" />}
+                    </span>
+                  ))}
                 </span>
               ))}
           </h1>

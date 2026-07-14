@@ -42,6 +42,7 @@ export default function CinemaSection({
   const stickyRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const isPlaying = useRef(false);
+  const primed = useRef(false);
   const reducedMotion = useReducedMotion();
   const [progress, setProgress] = useState(0);
   const [topOffset, setTopOffset] = useState(0);
@@ -69,6 +70,18 @@ export default function CinemaSection({
 
         const v = videoRef.current;
         if (!v) return;
+        // The showreel is ~18 MB, so don't touch it on page load. Start
+        // buffering only once the visitor actually scrolls toward the
+        // section — that leaves a full hero of runway before playback.
+        if (
+          !primed.current &&
+          window.scrollY > 40 &&
+          rect.top < window.innerHeight * 1.5
+        ) {
+          primed.current = true;
+          v.preload = "auto";
+          v.load();
+        }
         // Only roll the film once the screen is essentially at full
         // brightness — nobody should watch a dark video.
         const shouldPlay = p >= 0.32 && p < 0.985;
@@ -138,7 +151,7 @@ export default function CinemaSection({
               muted
               loop
               playsInline
-              preload="auto"
+              preload="metadata"
               onError={() => setVideoOk(false)}
             />
           ) : (

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Check from "@/components/Check";
 import Logo from "@/components/Logo";
 import { dictionaries, href, type Lang } from "@/lib/i18n";
 
@@ -9,23 +8,6 @@ export default function Footer({ lang }: { lang: Lang }) {
   return (
     <footer className="border-t border-line bg-surface">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-3 border-b border-line py-6">
-          {t.badges.map((badge) => (
-            <span
-              key={badge}
-              className="flex items-center gap-2 text-sm font-medium text-muted"
-            >
-              <span
-                className="flex h-5 w-5 items-center justify-center rounded-full bg-accent/10 text-accent"
-                aria-hidden
-              >
-                <Check className="h-2.5 w-2.5" />
-              </span>
-              {badge}
-            </span>
-          ))}
-        </div>
-
         <div className="grid gap-10 py-12 sm:grid-cols-3">
           <div>
             <Logo lang={lang} />

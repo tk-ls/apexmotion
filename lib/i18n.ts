@@ -483,7 +483,6 @@ const en = {
     ctaNote: "We confirm availability within one business day.",
   },
   footer: {
-    badges: ["CASA-Registered Operator", "Fully Insured", "Safety Officer On-Site"],
     blurb:
       "Cinematic FPV films and aerial photography for Sydney property, brands and events.",
     explore: "Explore",
@@ -521,7 +520,8 @@ const en = {
   },
   home: {
     eyebrow: "Sydney · Cinematic Drone Production",
-    h1: "Cinema-grade drone films. For property, brands and events.",
+    // \n marks a phone-only line break (rendered as <br class="sm:hidden">)
+    h1: "Cinema-grade \ndrone films. For property, brands \nand events.",
     sub: "A Sydney production studio flying one-take FPV and cinematic aerials, fully insured and CASA-compliant.",
     ctaPrimary: "Check Availability",
     ctaSecondary: "Watch Our Work",
@@ -1046,7 +1046,6 @@ const zh: Dict = {
     ctaNote: "一个工作日内确认档期。",
   },
   footer: {
-    badges: ["CASA 注册运营人", "全额公众责任险", "现场安全官"],
     blurb: "为悉尼的房产、品牌与活动，拍摄电影级 FPV 影片与航拍影像。",
     explore: "导航",
     exploreLinks: [
