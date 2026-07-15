@@ -24,7 +24,7 @@ export default function VerticalLanding({
         </h1>
         <p className="mt-5 text-muted">{v.landing.sub}</p>
 
-        {/* Pitch + sample film */}
+        {/* Pitch + studio footage */}
         <div className="mt-12 grid items-center gap-12 md:grid-cols-2">
           <div className="space-y-5 leading-relaxed text-muted">
             <p>{v.landing.p1}</p>
@@ -35,9 +35,6 @@ export default function VerticalLanding({
               src={v.landing.video}
               className="block aspect-video w-full object-cover"
             />
-            <span className="absolute right-3 top-3 rounded-full bg-black/60 px-2.5 py-1 text-[0.65rem] font-medium text-white backdrop-blur">
-              {t.common.sampleNote}
-            </span>
           </div>
         </div>
       </div>

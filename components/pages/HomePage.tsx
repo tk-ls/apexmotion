@@ -76,14 +76,10 @@ export default function HomePage({ lang }: { lang: Lang }) {
                 </Link>
               </div>
               <div className="relative overflow-hidden rounded-xl bg-black">
-                {/* Replace with a real one-take FPV example at launch */}
                 <AutoVideo
-                  src="/videos/feature-street-tour.mp4"
+                  src="/videos/feature-orbit.mp4"
                   className="block aspect-video w-full object-cover"
                 />
-                <span className="absolute right-3 top-3 rounded-full bg-black/60 px-2.5 py-1 text-[0.65rem] font-medium text-white backdrop-blur">
-                  {common.sampleNote}
-                </span>
               </div>
             </div>
           </Reveal>

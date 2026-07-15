@@ -25,9 +25,9 @@ function useReducedMotion() {
  * it is centred, pins there while the room scrolls past and the lights dim,
  * then un-pins and leaves with the bottom of the section.
  *
- * The placeholder clip lives at /public/videos/showreel-placeholder.mp4
- * (Mixkit free license). Swap the file for the real showreel when it exists —
- * keep it muted, looped, and under ~20 MB (Cloudflare Pages file limit is 25 MB).
+ * The showreel at /public/videos/showreel.mp4 is real studio footage (night
+ * freeway into the CBD). When replacing it, keep it muted, looped, and under
+ * ~20 MB (Cloudflare Pages file limit is 25 MB), and regenerate showreel.jpg.
  */
 export default function CinemaSection({
   eyebrow,
@@ -146,8 +146,8 @@ export default function CinemaSection({
             <video
               ref={videoRef}
               className="block aspect-video w-full scale-[1.01] bg-black object-cover"
-              src="/videos/showreel-placeholder.mp4"
-              poster="/videos/showreel-placeholder.jpg"
+              src="/videos/showreel.mp4"
+              poster="/videos/showreel.jpg"
               muted
               loop
               playsInline

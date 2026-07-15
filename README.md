@@ -30,10 +30,14 @@ VideoPlaceholder). Design tokens (colours, fonts) are defined in
 
 ## Before launch — TODO
 
-- [ ] Replace the stock placeholder clips in `public/videos/` (all from
-      Mixkit, free license) with real shoots — they're badged "Sample
-      project" on the site; move to Vimeo Pro/Mux/R2 hosting once real
-      showreels exist
+- [x] Real studio footage is live in `public/videos/` (cut down from the
+      DJI originals in `~/Documents/iCloud Photos`, trimmed/transcoded with
+      `avconvert`, ≤20 MB each for the Pages 25 MB file limit). Each clip
+      ships a same-name `.jpg` first-frame poster — regenerate it when
+      swapping a clip. Work-gallery tiles keep the "Sample project" badge
+      because the project names are illustrative, not client campaigns;
+      remove per-tile once real client work replaces them. Consider Vimeo
+      Pro/Mux/R2 hosting for longer films later
 - [ ] Activate the contact form: it POSTs to formsubmit.co →
       apexmotion@wlmail.xyz; the first submission triggers an activation
       email — click the link once the domain's catch-all is live
